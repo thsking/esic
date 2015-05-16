@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Esic - Connection</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+	<link rel="stylesheet" href="css/master.css"/>
+</head>
+<body ng-app="myApp" ng-controller="appCtrl">
+
+
+	<section id="connect">
+
+		<div class="connect-container">
+
+			<div class="logo-container">
+				<img src="img/es-logo.png" alt="">
+			</div>
+
+			<div class="actions-container">
+				
+				<div class="btn-soundcloud-container">
+					<button id="connectWithSoundCloud"><span>Se connecter avec <strong>Soundcloud</strong></span></button>
+				</div>
+
+				<div class="connect-hors-ligne-container">
+						
+					<a href="#">Essayer sans compte</a>
+
+				</div>
+
+			</div>
+
+			<div class="info-connect hide">
+				
+				<p>Connection en cours</p>
+
+			</div>
+			
+
+			<div class="form-postal-code hide">
+				<div class="form-postal-code-container">
+
+					<h2>Indiquez votre<br /> code postal pour vous connecter.</h2>
+
+					<div><input type="text" name="postal-code" class="postal-code" placeholder="...." maxlength="4"></div>
+					<p class="postal-result">&nbsp;</p>
+					<div><input type="submit" value="Se connecter" class="btn-submit blocked"></div>
+
+				</div>
+			</div>
+
+		</div>
+
+
+		<div id="devinfo"></div>
+
+	</section>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  	<script src="lib/angular/angular.min.js"></script>
+  	<script src="lib/quirksmode.js"></script>
+
+	<script src="//connect.soundcloud.com/sdk.js"></script>
+	<script>
+
+		/*SC.initialize({
+		    client_id: "264899dc03321fc2b89e7ff4816d7122",
+		    redirect_uri: "http://localhost/_heaj/tfe-build/",
+		});*/
+
+		SC.initialize({
+		    client_id: "b072da9efab20fba04e9c81e8eb1faa8",
+		    redirect_uri: "http://thsking.be/tfe/build",
+		});
+
+	</script>
+	<script src="js/start.js"></script>
+	
+
+</body>
+</html>

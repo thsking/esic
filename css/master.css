@@ -1,0 +1,1999 @@
+@font-face {
+  font-family: 'Ubuntu';
+  src: url(fonts/Ubuntu-Regular.ttf);
+}
+@font-face {
+  font-family: 'Ubuntu Light';
+  src: url(fonts/Ubuntu-Light.ttf);
+}
+@font-face {
+  font-family: 'Ubuntu Bold';
+  src: url(fonts/Ubuntu-Bold.ttf);
+}
+@font-face {
+  font-family: 'Droid Sans';
+  src: url(fonts/DroidSans.ttf);
+}
+/* line 1, scss/modules/_filter.scss */
+.filter {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 100;
+  position: fixed;
+  top: -237px;
+  left: -130px;
+  visibility: hidden;
+  background: transparent;
+  opacity: 0;
+  z-index: 100;
+  -webkit-transform: scale(0.2);
+  -moz-transform: scale(0.2);
+  -ms-transform: scale(0.2);
+  transform: scale(0.2);
+  -webkit-transition: all 0.15s cubic-bezier(0.18, 1, 0.71, 1);
+  -moz-transition: all 0.15s cubic-bezier(0.18, 1, 0.71, 1);
+  -ms-transition: all 0.15s cubic-bezier(0.18, 1, 0.71, 1);
+  transition: all 0.15s cubic-bezier(0.18, 1, 0.71, 1);
+}
+/* line 21, scss/modules/_filter.scss */
+.filter.show {
+  visibility: visible;
+  opacity: 1;
+  background: #1c1d1e;
+  top: -37px;
+  -webkit-transform: scale(1) translate3D(131px, 87px, 0);
+}
+
+/* line 1, scss/modules/_header.scss */
+header {
+  margin-bottom: 8px;
+  /* position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 50px; */
+}
+/* line 12, scss/modules/_header.scss */
+header .header-container {
+  position: relative;
+  padding: 0 20px;
+  background: #1c1d1e;
+  height: 50px;
+  z-index: 500;
+}
+/* line 19, scss/modules/_header.scss */
+header .header-container.nobg {
+  background: transparent;
+}
+/* line 22, scss/modules/_header.scss */
+header .header-container.nobg:after {
+  display: none;
+}
+/* line 27, scss/modules/_header.scss */
+header .header-container:after {
+  content: "";
+  display: block;
+  left: 10px;
+  right: 10px;
+  height: 1px;
+  background: #353637;
+  position: absolute;
+  bottom: 0;
+}
+/* line 42, scss/modules/_header.scss */
+header #page-title {
+  text-align: center;
+  padding-top: 13px;
+  text-transform: uppercase;
+}
+/* line 49, scss/modules/_header.scss */
+header #previous-btn {
+  position: absolute;
+  left: 20px;
+  top: 18px;
+}
+/* line 55, scss/modules/_header.scss */
+header #filter-btn {
+  color: #4c90c1;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-family: 'Ubuntu';
+  position: absolute;
+  left: 20px;
+  top: 17px;
+  display: none;
+}
+/* line 67, scss/modules/_header.scss */
+header #filter-btn.selected {
+  text-decoration: underline;
+}
+/* line 71, scss/modules/_header.scss */
+header #filter-btn.show {
+  display: block;
+}
+/* line 76, scss/modules/_header.scss */
+header #add-annonces-btn {
+  position: absolute;
+  left: 20px;
+  top: 4px;
+  display: none;
+  font-size: 31px;
+  color: #4c90c1;
+  font-family: 'Ubuntu';
+}
+/* line 85, scss/modules/_header.scss */
+header #add-annonces-btn.show {
+  display: block;
+}
+/* line 90, scss/modules/_header.scss */
+header nav {
+  height: 100%;
+  background: #1c1d1e;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 500;
+  -webkit-transform: translateX(220px);
+  -moz-transform: translateX(220px);
+  -ms-transform: translateX(220px);
+  transform: translateX(220px);
+  -webkit-transition: all 0.3s cubic-bezier(0.81, 0.76, 0.78, 0.98) 0.2s;
+  -moz-transition: all 0.3s cubic-bezier(0.81, 0.76, 0.78, 0.98) 0.2s;
+  -ms-transition: all 0.3s cubic-bezier(0.81, 0.76, 0.78, 0.98) 0.2s;
+  transition: all 0.3s cubic-bezier(0.81, 0.76, 0.78, 0.98) 0.2s;
+}
+/* line 100, scss/modules/_header.scss */
+header nav .nav-container {
+  width: 220px;
+}
+/* line 109, scss/modules/_header.scss */
+header nav.open {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+/* line 113, scss/modules/_header.scss */
+header nav:before {
+  background: #1c1d1e;
+}
+/* line 117, scss/modules/_header.scss */
+header nav #menu-btn {
+  width: 50px;
+  height: 49px;
+  background: #1c1d1e;
+  position: absolute;
+  left: -50px;
+  -webkit-transition: all 0.2s ease-in 0.3s;
+  -moz-transition: all 0.2s ease-in 0.3s;
+  -ms-transition: all 0.2s ease-in 0.3s;
+  transition: all 0.2s ease-in 0.3s;
+}
+/* line 129, scss/modules/_header.scss */
+header nav #menu-btn.btn-nobg {
+  background: transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+/* line 134, scss/modules/_header.scss */
+header nav #menu-btn.btn-nobg.open {
+  background: #1c1d1e;
+}
+/* line 141, scss/modules/_header.scss */
+header nav #menu-btn .menu-btn-container {
+  width: 17px;
+  height: 14px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  top: 17px;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+/* line 157, scss/modules/_header.scss */
+header nav #menu-btn .bar {
+  height: 1px;
+  width: 17px;
+  background: #d4d9de;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+/* line 168, scss/modules/_header.scss */
+header nav #menu-btn .bar-2 {
+  top: 5px;
+}
+/* line 171, scss/modules/_header.scss */
+header nav #menu-btn .bar-3 {
+  top: 10px;
+}
+/* line 175, scss/modules/_header.scss */
+header nav #menu-btn.open .menu-btn-container {
+  -webkit-transform: rotate(180deg) translate3D(0, 2.5px, 0);
+  -moz-transform: rotate(180deg) translate3D(0, 2.5px, 0);
+  -ms-transform: rotate(180deg) translate3D(0, 2.5px, 0);
+  -khtml-transform: rotate(180deg) translate3D(0, 2.5px, 0);
+  transform: rotate(180deg) translate3D(0, 2.5px, 0);
+}
+/* line 181, scss/modules/_header.scss */
+header nav #menu-btn.open .menu-btn-container .bar-1 {
+  opacity: 0;
+}
+/* line 184, scss/modules/_header.scss */
+header nav #menu-btn.open .menu-btn-container .bar-2 {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* line 187, scss/modules/_header.scss */
+header nav #menu-btn.open .menu-btn-container .bar-3 {
+  -webkit-transform: rotate(-45deg) translate3D(3.5px, -3.5px, 0);
+  -ms-transform: rotate(-45deg) translate3D(3.5px, -3.5px, 0);
+  -moz-transform: rotate(-45deg) translate3D(3.5px, -3.5px, 0);
+  -khtml-transform: rotate(-45deg) translate3D(3.5px, -3.5px, 0);
+  transform: rotate(-45deg) translate3D(3.5px, -3.5px, 0);
+}
+/* line 208, scss/modules/_header.scss */
+header nav h4 {
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
+  height: 49px;
+  line-height: 49px;
+  background: #1c1d1e;
+}
+/* line 217, scss/modules/_header.scss */
+header nav li:last-child a {
+  border-bottom: none;
+}
+/* line 221, scss/modules/_header.scss */
+header nav li.show-forConnected a {
+  background: #1c1d1e;
+}
+/* line 224, scss/modules/_header.scss */
+header nav li.show-forConnected a.profil-link {
+  height: auto;
+  padding: 20px 0;
+  line-height: auto;
+  padding-bottom: 0;
+  border-bottom: none;
+  background: #2e3031;
+  background: #1c1d1e;
+}
+/* line 236, scss/modules/_header.scss */
+header nav a {
+  display: block;
+  text-align: center;
+  color: #d4d9de;
+  text-decoration: none;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  background: #1c1d1e;
+  background: #2e3031;
+}
+/* line 250, scss/modules/_header.scss */
+header nav a img {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 0px;
+  border-radius: 60px;
+}
+/* line 259, scss/modules/_header.scss */
+header nav a .notifications {
+  width: 20px;
+  height: 20px;
+  display: block;
+  font-size: 12px;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  line-height: 20px;
+  bottom: 0;
+  margin: auto 0;
+  border-radius: 20px;
+  background: #4c90c1;
+}
+/* line 278, scss/modules/_header.scss */
+header nav .show-visitor {
+  margin-top: 10px;
+  padding: 10px 10px;
+}
+/* line 283, scss/modules/_header.scss */
+header nav .show-visitor a {
+  line-height: 1.3;
+  font-size: 16px;
+  line-height: 19px;
+  height: auto;
+  padding: 7px;
+  border-radius: 5px;
+  background: #4c90c1;
+}
+/* line 293, scss/modules/_header.scss */
+header nav .show-visitor span {
+  display: block;
+  font-size: 12px;
+  margin-top: -2px;
+}
+/* line 304, scss/modules/_header.scss */
+header nav.dev {
+  width: 200px;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  z-index: 500;
+  display: none;
+  background: #5b5b5b;
+}
+/* line 318, scss/modules/_header.scss */
+header nav.dev h4 {
+  font-size: 14px;
+  text-align: center;
+  padding: 10px 0;
+}
+/* line 324, scss/modules/_header.scss */
+header nav.dev a {
+  display: block;
+  height: 45px;
+  line-height: 45px;
+  background: #4c90c1;
+  text-align: center;
+  text-decoration: none;
+  color: #d4d9de;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+/* line 335, scss/modules/_header.scss */
+header nav.dev li:last-child a {
+  border-bottom: none;
+}
+
+/* line 1, scss/modules/_users-list.scss */
+#users-list {
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+/* line 5, scss/modules/_users-list.scss */
+#users-list.low-opa {
+  opacity: .3;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+/* line 11, scss/modules/_users-list.scss */
+#users-list .user-list-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 56px;
+}
+
+/* line 1, scss/modules/_user-user.scss */
+.users-user {
+  position: relative;
+  margin-bottom: 20px;
+}
+/* line 6, scss/modules/_user-user.scss */
+.users-user:after {
+  content: '';
+  display: block;
+  width: 295px;
+  height: 1px;
+  background: url(../img/sprite.png) no-repeat;
+  background-position: 0 -19px;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  opacity: 0.1;
+}
+/* line 22, scss/modules/_user-user.scss */
+.users-user.noborder:after {
+  display: none;
+}
+/* line 27, scss/modules/_user-user.scss */
+.users-user h3 {
+  color: #4c90c1;
+  margin-bottom: 3px;
+  font-size: 18px;
+  font-family: 'Ubuntu';
+}
+/* line 33, scss/modules/_user-user.scss */
+.users-user p {
+  font-size: 14px;
+  position: relative;
+  padding-left: 25px;
+  padding-bottom: 3px;
+}
+/* line 40, scss/modules/_user-user.scss */
+.users-user p.gray-noPadLeft {
+  opacity: .5;
+  padding-left: 0;
+}
+/* line 45, scss/modules/_user-user.scss */
+.users-user p span.ico-litle {
+  width: 15px;
+  height: 15px;
+  background: url(../img/sprite.png) no-repeat;
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 2px;
+}
+/* line 56, scss/modules/_user-user.scss */
+.users-user p span.ico-litle.ico-litle-guitare {
+  background-position: -33px 0;
+}
+/* line 59, scss/modules/_user-user.scss */
+.users-user p span.ico-litle.ico-litle-wave {
+  background-position: -51px 0;
+}
+/* line 62, scss/modules/_user-user.scss */
+.users-user p span.ico-litle.ico-litle-distance {
+  width: 11px;
+  background-position: -68px 0;
+}
+/* line 71, scss/modules/_user-user.scss */
+.users-user .user-avatar {
+  margin-top: 4px;
+}
+/* line 76, scss/modules/_user-user.scss */
+.users-user .user-distance {
+  padding: 0;
+  text-align: right;
+}
+/* line 80, scss/modules/_user-user.scss */
+.users-user .user-vues {
+  margin-top: 8px;
+  margin-right: 10px;
+  padding: 0;
+  text-align: right;
+  line-height: 0.8;
+}
+/* line 86, scss/modules/_user-user.scss */
+.users-user .user-vues.gestion-annonces {
+  margin-bottom: 23px;
+}
+/* line 90, scss/modules/_user-user.scss */
+.users-user .user-delete {
+  position: absolute;
+  bottom: -5px;
+  right: 9px;
+  width: 15px;
+  height: 20px;
+}
+/* line 96, scss/modules/_user-user.scss */
+.users-user .user-delete:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: url(../img/sprite.png) no-repeat;
+  background-position: -175px -26px;
+  width: 17px;
+  height: 18px;
+}
+/* line 108, scss/modules/_user-user.scss */
+.users-user .user-distance-play {
+  font-size: 14px;
+  margin-top: 6px;
+}
+/* line 112, scss/modules/_user-user.scss */
+.users-user .user-distance-play .user-distance {
+  padding: 0;
+  text-align: right;
+}
+/* line 117, scss/modules/_user-user.scss */
+.users-user .user-distance-play .user-btn-play-container {
+  position: absolute;
+  right: 0;
+  bottom: 5px;
+}
+/* line 121, scss/modules/_user-user.scss */
+.users-user .user-distance-play .user-btn-play-container.hide {
+  display: none;
+}
+/* line 126, scss/modules/_user-user.scss */
+.users-user .user-distance-play .user-play-progress-bar-container {
+  display: none;
+}
+/* line 130, scss/modules/_user-user.scss */
+.users-user .user-distance-play .user-play-progress-bar-container.show {
+  display: block;
+}
+/* line 134, scss/modules/_user-user.scss */
+.users-user .user-distance-play .user-play-progress-bar-container .user-play-progress-bar-cache,
+.users-user .user-distance-play .user-play-progress-bar-container .user-play-progress-bar-played {
+  width: 100%;
+  height: 2px;
+  background: #5b5b5b;
+  position: absolute;
+  left: 0;
+  bottom: -9px;
+}
+/* line 143, scss/modules/_user-user.scss */
+.users-user .user-distance-play .user-play-progress-bar-container .user-play-progress-bar-played {
+  width: 0%;
+  background: #4c90c1;
+}
+/* line 149, scss/modules/_user-user.scss */
+.users-user .user-distance-play .user-btn-sendMsg-container {
+  position: absolute;
+  right: 0;
+  bottom: 5px;
+  display: none;
+}
+/* line 154, scss/modules/_user-user.scss */
+.users-user .user-distance-play .user-btn-sendMsg-container.show {
+  display: block;
+}
+
+/* line 1, scss/modules/_annonces-list.scss */
+#annonces-list {
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+/* line 5, scss/modules/_annonces-list.scss */
+#annonces-list.low-opa {
+  opacity: .3;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+/* line 11, scss/modules/_annonces-list.scss */
+#annonces-list .annonces-list-annonce {
+  position: relative;
+  margin-bottom: 30px;
+}
+/* line 16, scss/modules/_annonces-list.scss */
+#annonces-list .annonces-list-annonce:after {
+  content: '';
+  display: block;
+  width: 295px;
+  height: 1px;
+  background: url(../img/sprite.png) no-repeat;
+  background-position: 0 -19px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -15px;
+  opacity: 0.1;
+}
+/* line 33, scss/modules/_annonces-list.scss */
+#annonces-list .annonces-list-annonce .annonce-instrument {
+  padding-top: 5px;
+}
+/* line 37, scss/modules/_annonces-list.scss */
+#annonces-list .annonces-list-annonce .annonce-distance {
+  margin-top: 4px;
+}
+
+/* line 1, scss/modules/_form.scss */
+.form {
+  font-size: 16px;
+}
+/* line 7, scss/modules/_form.scss */
+.form .textarea-container label {
+  display: block;
+  width: 100%;
+  height: 40px;
+  background: #4c90c1;
+  color: #d4d9de;
+  text-align: center;
+  line-height: 40px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  font-family: "Droid Sans";
+}
+/* line 19, scss/modules/_form.scss */
+.form .textarea-container textarea {
+  width: 100%;
+  height: 155px;
+  box-sizing: border-box;
+  border: 1px solid #4c90c1;
+  background: #1c1d1e;
+  resize: none;
+  color: #d4d9de;
+  padding: 20px 20px 10px 20px;
+  font-family: "Droid Sans";
+  font-size: 14px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  margin-bottom: 10px;
+}
+/* line 36, scss/modules/_form.scss */
+.form .select-container {
+  position: relative;
+}
+/* line 39, scss/modules/_form.scss */
+.form .select-container select, .form .select-container .select-selected {
+  width: 100%;
+  height: 40px;
+  background: #4c90c1;
+  text-align: center;
+  color: #d4d9de;
+  line-height: 40px;
+  font-family: 'Droid Sans';
+  border-radius: 5px;
+}
+/* line 50, scss/modules/_form.scss */
+.form .select-container select {
+  margin-bottom: 10px;
+  border: none;
+}
+/* line 55, scss/modules/_form.scss */
+.form .select-container .select-selected {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+/* line 62, scss/modules/_form.scss */
+.form .select-container .select-selected:after {
+  width: 11px;
+  height: 9px;
+  background-position: -109px 0px;
+  right: 15px;
+}
+/* line 72, scss/modules/_form.scss */
+.form div.input-container {
+  margin-bottom: 10px;
+}
+/* line 76, scss/modules/_form.scss */
+.form div.input-container.after {
+  display: none;
+}
+/* line 79, scss/modules/_form.scss */
+.form div.input-container input {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #4c90c1;
+  background: #1c1d1e;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #d4d9de;
+}
+/* line 91, scss/modules/_form.scss */
+.form div.input-container input.with-ico {
+  padding-left: 30px;
+}
+/* line 96, scss/modules/_form.scss */
+.form div.input-container input.twitter {
+  border-color: #55acee;
+}
+/* line 99, scss/modules/_form.scss */
+.form div.input-container input.facebook {
+  border-color: #3b5998;
+}
+/* line 106, scss/modules/_form.scss */
+.form .btn-submit-container, .form .btn-reset-container {
+  position: relative;
+}
+/* line 110, scss/modules/_form.scss */
+.form .btn-submit-container .btn-submit, .form .btn-submit-container .btn-reset, .form .btn-reset-container .btn-submit, .form .btn-reset-container .btn-reset {
+  border: 1px solid #4c90c1;
+  border-radius: 3px;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  background: #1c1d1e;
+  color: #4c90c1;
+  font-family: 'Ubuntu';
+  font-size: 16px;
+  margin-bottom: 10px;
+  position: relative;
+  text-transform: uppercase;
+}
+/* line 124, scss/modules/_form.scss */
+.form .btn-submit-container.btn-submit-container, .form .btn-reset-container.btn-submit-container {
+  margin-top: 10px;
+}
+/* line 127, scss/modules/_form.scss */
+.form .btn-submit-container .btn-reset, .form .btn-reset-container .btn-reset {
+  border-color: white;
+  border: none;
+}
+/* line 131, scss/modules/_form.scss */
+.form .btn-submit-container:before, .form .btn-reset-container:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 40px;
+  border-radius: 3px;
+  background: #4c90c1;
+  position: absolute;
+  left: 0;
+  top: 3px;
+}
+/* line 142, scss/modules/_form.scss */
+.form .btn-submit-container.btn-reset-container:before, .form .btn-reset-container.btn-reset-container:before {
+  background: white;
+  display: none;
+}
+
+/* line 1, scss/modules/_annonce.scss */
+#annonce {
+  padding: 0 10px;
+  padding-top: 63px;
+}
+/* line 6, scss/modules/_annonce.scss */
+#annonce:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: 0px;
+  width: 100%;
+  height: 312px;
+  background: url(../img/annonce-bg.png) no-repeat;
+  background-size: 100%;
+  z-index: 0;
+  opacity: .3;
+}
+@media (min-width: 375px) {
+  /* line 6, scss/modules/_annonce.scss */
+  #annonce:before {
+    height: 263px;
+  }
+}
+/* line 25, scss/modules/_annonce.scss */
+#annonce .annonce-header {
+  margin-bottom: 47px;
+  margin-top: 15px;
+}
+/* line 30, scss/modules/_annonce.scss */
+#annonce .annonce-header li {
+  position: relative;
+  text-align: center;
+  margin-bottom: 4px;
+  font-family: 'Ubuntu';
+}
+/* line 36, scss/modules/_annonce.scss */
+#annonce .annonce-header li.instrument {
+  font-size: 32px;
+}
+/* line 39, scss/modules/_annonce.scss */
+#annonce .annonce-header li.musicStyle {
+  font-size: 26px;
+}
+/* line 42, scss/modules/_annonce.scss */
+#annonce .annonce-header li.distance span {
+  font-size: 26px;
+}
+/* line 46, scss/modules/_annonce.scss */
+#annonce .annonce-header li.instrument:before, #annonce .annonce-header li.musicStyle:before, #annonce .annonce-header li.distance:before {
+  content: "";
+  display: block;
+  background: url(../img/sprite.png) no-repeat;
+  position: absolute;
+  left: 10px;
+  bottom: 5px;
+  width: 20px;
+  height: 20px;
+  opacity: .3;
+}
+/* line 60, scss/modules/_annonce.scss */
+#annonce .annonce-header li.instrument:before {
+  background-position: 0px -23px;
+}
+/* line 63, scss/modules/_annonce.scss */
+#annonce .annonce-header li.musicStyle:before {
+  background-position: -23px -28px;
+  height: 10px;
+}
+/* line 67, scss/modules/_annonce.scss */
+#annonce .annonce-header li.distance:before {
+  background-position: -66px 0;
+  width: 15px;
+  height: 15px;
+}
+/* line 78, scss/modules/_annonce.scss */
+#annonce .annonce-description {
+  margin-bottom: 15px;
+}
+/* line 85, scss/modules/_annonce.scss */
+#annonce .annonce-author .users-user {
+  margin: 0 15px 20px 15px;
+  position: relative;
+}
+/* line 90, scss/modules/_annonce.scss */
+#annonce .annonce-author .user-avatar img {
+  width: 56px;
+  height: 56px;
+  border-radius: 56px;
+}
+/* line 98, scss/modules/_annonce.scss */
+#annonce .annonce-btn-reply-container {
+  margin-bottom: 10px;
+}
+/* line 100, scss/modules/_annonce.scss */
+#annonce .annonce-btn-reply-container a.btn {
+  display: block;
+  width: 100%;
+  height: 40px;
+  background: #4c90c1;
+  color: #d4d9de;
+  text-align: center;
+  text-decoration: none;
+  line-height: 40px;
+  border-radius: 3px;
+}
+
+/* line 3, scss/modules/_messages-list.scss */
+#messages-list .messages-list-message {
+  margin-bottom: 1px;
+}
+/* line 5, scss/modules/_messages-list.scss */
+#messages-list .messages-list-message:after {
+  bottom: 0px;
+}
+/* line 9, scss/modules/_messages-list.scss */
+#messages-list .messages-list-message .messages-list-message-container {
+  padding: 5px 10px;
+}
+/* line 11, scss/modules/_messages-list.scss */
+#messages-list .messages-list-message .messages-list-message-container.new {
+  background: #4c90c1;
+  color: white;
+}
+/* line 12, scss/modules/_messages-list.scss */
+#messages-list .messages-list-message .messages-list-message-container.new h3 {
+  color: #d4d9de;
+}
+/* line 21, scss/modules/_messages-list.scss */
+#messages-list .messages-list-infos {
+  padding-top: 6px;
+}
+/* line 23, scss/modules/_messages-list.scss */
+#messages-list .messages-list-infos p.gray-noPadLeft {
+  width: 186px;
+}
+/* line 28, scss/modules/_messages-list.scss */
+#messages-list .messages-list-time {
+  margin-top: 15px;
+}
+/* line 32, scss/modules/_messages-list.scss */
+#messages-list .messages-list-photo img {
+  width: 56px;
+  height: 56px;
+  border-radius: 56px;
+}
+
+/* line 1, scss/modules/_message.scss */
+#message {
+  margin-bottom: 66px;
+}
+/* line 5, scss/modules/_message.scss */
+#message .message {
+  margin-bottom: 10px;
+  font-family: "Droid Sans";
+  font-size: 14px;
+  line-height: 16px;
+}
+/* line 12, scss/modules/_message.scss */
+#message .message .message-container {
+  color: #1c1d1e;
+  background: #d4d9de;
+  max-width: 85%;
+  padding: 15px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  position: relative;
+}
+/* line 23, scss/modules/_message.scss */
+#message .message .message-container:before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 11px;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  background: #d4d9de;
+  z-index: -1;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* line 37, scss/modules/_message.scss */
+#message .message .message-container .message-infos {
+  margin-top: 10px;
+  font-size: 12px;
+}
+/* line 47, scss/modules/_message.scss */
+#message .message.message-send .message-container {
+  background: #4c90c1;
+  color: #d4d9de;
+}
+/* line 51, scss/modules/_message.scss */
+#message .message.message-send .message-container:before {
+  background: #4c90c1;
+  left: auto;
+  right: -5px;
+}
+/* line 61, scss/modules/_message.scss */
+#message .message-answere {
+  position: fixed;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  min-height: 35px;
+  max-height: 150px;
+  padding: 10px 20px;
+  margin-top: 24px;
+  background: #1c1d1e;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+/* line 75, scss/modules/_message.scss */
+#message .message-answere textarea {
+  border: none;
+  background: transparent;
+  width: 75%;
+  height: 25px;
+  font-family: 'Droid Sans';
+  font-size: 14px;
+  margin-top: 6px;
+  color: #d4d9de;
+  resize: none;
+}
+/* line 86, scss/modules/_message.scss */
+#message .message-answere textarea:focus {
+  outline: none;
+}
+/* line 93, scss/modules/_message.scss */
+#message .message-answere .btn-send {
+  margin-right: 40px;
+  margin-top: 6px;
+}
+
+/* line 1, scss/modules/_profil.scss */
+#profil {
+  padding: 0 10px;
+  padding-top: 63px;
+}
+/* line 7, scss/modules/_profil.scss */
+#profil:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: 0px;
+  width: 100%;
+  height: 312px;
+  background: url(../img/profil-bg.png) no-repeat;
+  background-size: 100%;
+  z-index: 1;
+  opacity: .3;
+}
+@media (min-width: 375px) {
+  /* line 7, scss/modules/_profil.scss */
+  #profil:before {
+    height: 305px;
+  }
+}
+/* line 28, scss/modules/_profil.scss */
+#profil .profil-header-container .avatar-container {
+  width: 116px;
+  height: 116px;
+  background: url(../img/user-avatar-back.png) no-repeat;
+  margin-left: 10px;
+}
+/* line 34, scss/modules/_profil.scss */
+#profil .profil-header-container .avatar-container img {
+  margin-top: 14px;
+  margin-left: 14px;
+  width: 88px;
+  height: 88px;
+  border-radius: 85px;
+}
+/* line 44, scss/modules/_profil.scss */
+#profil .user-infos {
+  margin-left: 32px;
+  margin-top: 24px;
+}
+/* line 49, scss/modules/_profil.scss */
+#profil .user-infos p {
+  line-height: 1.3;
+  font-size: 16px;
+  color: white;
+}
+/* line 55, scss/modules/_profil.scss */
+#profil .user-infos:after {
+  display: none;
+}
+/* line 61, scss/modules/_profil.scss */
+#profil .profil-edit-container {
+  margin-top: 5px;
+  display: none;
+}
+/* line 64, scss/modules/_profil.scss */
+#profil .profil-edit-container.show {
+  display: block;
+}
+/* line 67, scss/modules/_profil.scss */
+#profil .profil-edit-container a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  padding-right: 38px;
+  position: relative;
+}
+/* line 73, scss/modules/_profil.scss */
+#profil .profil-edit-container a:after {
+  display: block;
+  content: "";
+  width: 12px;
+  height: 19px;
+  background: url(../img/sprite.png) no-repeat;
+  background-position: -47px -24px;
+  position: absolute;
+  right: 10px;
+  top: -2px;
+}
+/* line 87, scss/modules/_profil.scss */
+#profil .profil-social-message {
+  margin-top: 22px;
+  margin-bottom: 35px;
+  position: relative;
+  z-index: 5;
+}
+/* line 95, scss/modules/_profil.scss */
+#profil .profil-social-message .social-link-list li {
+  position: relative;
+}
+/* line 98, scss/modules/_profil.scss */
+#profil .profil-social-message .social-link-list li:after {
+  display: block;
+  content: "";
+  width: 1px;
+  height: 32px;
+  position: absolute;
+  background: gray;
+  top: 0;
+  right: -1px;
+  opacity: .2;
+}
+/* line 109, scss/modules/_profil.scss */
+#profil .profil-social-message .social-link-list li:last-child:after, #profil .profil-social-message .social-link-list li.only:after {
+  display: none;
+}
+/* line 113, scss/modules/_profil.scss */
+#profil .profil-social-message .social-link-list a {
+  display: block;
+  width: 54px;
+  height: 35px;
+  position: relative;
+  text-indent: -99999px;
+}
+/* line 120, scss/modules/_profil.scss */
+#profil .profil-social-message .social-link-list a:before, #profil .profil-social-message .social-link-list a:after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+/* line 126, scss/modules/_profil.scss */
+#profil .profil-social-message .social-link-list a:before {
+  width: 11px;
+  height: 25px;
+  background: url(../img/sprite.png) no-repeat;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 0;
+  opacity: .8;
+}
+/* line 134, scss/modules/_profil.scss */
+#profil .profil-social-message .social-link-list a:after {
+  height: 3px;
+  width: 100%;
+  bottom: 0;
+}
+/* line 141, scss/modules/_profil.scss */
+#profil .profil-social-message .social-link-list a.link-facebook:before {
+  background-position: -100px -20px;
+}
+/* line 144, scss/modules/_profil.scss */
+#profil .profil-social-message .social-link-list a.link-facebook:after {
+  background: #3b5998;
+}
+/* line 150, scss/modules/_profil.scss */
+#profil .profil-social-message .social-link-list a.link-twitter:before {
+  background-position: -113px -20px;
+  width: 20px;
+}
+/* line 154, scss/modules/_profil.scss */
+#profil .profil-social-message .social-link-list a.link-twitter:after {
+  background: #55acee;
+}
+/* line 159, scss/modules/_profil.scss */
+#profil .profil-social-message .social-link-list a.link-soundcloud:before {
+  background-position: -137px -20px;
+  width: 31px;
+}
+/* line 163, scss/modules/_profil.scss */
+#profil .profil-social-message .social-link-list a.link-soundcloud:after {
+  background: #f8630e;
+}
+/* line 170, scss/modules/_profil.scss */
+#profil .profil-social-message .profil-sendMsg-container {
+  margin-right: 11px;
+  margin-top: 8px;
+}
+/* line 174, scss/modules/_profil.scss */
+#profil .profil-social-message .profil-sendMsg-container .btn-sendMsg {
+  opacity: .8;
+}
+/* line 181, scss/modules/_profil.scss */
+#profil .profil-annonces {
+  margin-top: 25px;
+}
+/* line 184, scss/modules/_profil.scss */
+#profil .profil-annonces .users-user {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+/* line 189, scss/modules/_profil.scss */
+#profil .profil-annonces .users-user:last-child:after {
+  display: none;
+}
+/* line 196, scss/modules/_profil.scss */
+#profil .no-song {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 3, scss/modules/_edit-profil.scss */
+#edit-profil .info-info {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+/* line 6, scss/modules/_edit-profil.scss */
+#edit-profil .info-info p {
+  line-height: 1.4;
+}
+/* line 8, scss/modules/_edit-profil.scss */
+#edit-profil .btn-submit-container {
+  margin-top: 30px;
+}
+
+@-webkit-keyframes slideOutLeft {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: scale(0.95);
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+@-moz-keyframes slideOutLeft {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-moz-keyframes slideInRight {
+  from {
+    -webkit-transform: scale(0.95);
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+@-ms-keyframes slideOutLeft {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-ms-keyframes slideInRight {
+  from {
+    -webkit-transform: scale(0.95);
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes slideOutLeft {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes slideInRight {
+  from {
+    -webkit-transform: scale(0.75);
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+/* line 86, scss/modules/_css-animation.scss */
+.ng-enter {
+  -webkit-animation: slideInRight 0.4s both cubic-bezier(0.81, 0.76, 0.78, 0.98);
+  -moz-animation: slideInRight 0.4s both cubic-bezier(0.81, 0.76, 0.78, 0.98);
+  -ms-animation: slideInRight 0.4s both cubic-bezier(0.81, 0.76, 0.78, 0.98);
+  animation: slideInRight 0.4s both cubic-bezier(0.81, 0.76, 0.78, 0.98);
+  z-index: 150;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* line 94, scss/modules/_css-animation.scss */
+.ng-leave {
+  display: none;
+  opacity: 1;
+  z-index: 120;
+}
+
+/* line 101, scss/modules/_css-animation.scss */
+.page.ng-enter {
+  height: 100%;
+}
+
+/* line 2, scss/modules/_load-indicator.scss */
+.load-indicator-container .load-indicator {
+  top: 15px;
+  width: 50px;
+  height: 50px;
+  z-index: 800;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+}
+/* line 10, scss/modules/_load-indicator.scss */
+.load-indicator-container .load-indicator img {
+  width: 100%;
+}
+
+/* line 1, scss/modules/_connect.scss */
+#connect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: black;
+  background: url(../img/Page-Login.jpg) no-repeat;
+  background-size: 100% auto;
+}
+/* line 15, scss/modules/_connect.scss */
+#connect .logo-container {
+  width: 104px;
+  height: 62px;
+  margin: 0 auto;
+  position: absolute;
+  top: 15%;
+  left: 0;
+  right: 0;
+}
+/* line 28, scss/modules/_connect.scss */
+#connect .actions-container {
+  position: absolute;
+  bottom: 16%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+/* line 37, scss/modules/_connect.scss */
+#connect .actions-container a {
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+/* line 43, scss/modules/_connect.scss */
+#connect .actions-container .btn-soundcloud-container {
+  margin-bottom: 30px;
+}
+/* line 47, scss/modules/_connect.scss */
+#connect .actions-container .btn-soundcloud-container button {
+  width: 261px;
+  height: 50px;
+  background: url(../img/btn-soundcloud.png);
+  border: none;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  font-family: 'Ubuntu Light';
+  color: white;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: left;
+}
+/* line 64, scss/modules/_connect.scss */
+#connect .actions-container .btn-soundcloud-container button span {
+  width: 179px;
+  position: absolute;
+  right: 0;
+  top: 8px;
+}
+/* line 71, scss/modules/_connect.scss */
+#connect .actions-container .btn-soundcloud-container button strong {
+  font-weight: normal;
+  font-family: "Ubuntu Bold";
+}
+/* line 81, scss/modules/_connect.scss */
+#connect .info-connect {
+  position: absolute;
+  bottom: 29%;
+  left: 0;
+  right: 0;
+  width: 260px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 18px;
+}
+/* line 96, scss/modules/_connect.scss */
+#connect .form-postal-code {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #d4d9de;
+  padding: 25px 10px;
+  text-align: center;
+}
+@media (min-height: 550px) {
+  /* line 96, scss/modules/_connect.scss */
+  #connect .form-postal-code {
+    bottom: 10%;
+  }
+}
+/* line 109, scss/modules/_connect.scss */
+#connect .form-postal-code h2 {
+  width: 230px;
+  margin: 0 auto;
+  font-size: 24px;
+  font-family: 'Ubuntu';
+  margin-bottom: 18px;
+}
+/* line 117, scss/modules/_connect.scss */
+#connect .form-postal-code input[type=text] {
+  background: transparent;
+  border: none;
+  font-size: 62px;
+  text-align: center;
+  width: 190px;
+  margin: 0 auto;
+  color: #4c90c1;
+  margin-bottom: 5px;
+}
+/* line 126, scss/modules/_connect.scss */
+#connect .form-postal-code input[type=text]:focus {
+  outline: none;
+}
+/* line 131, scss/modules/_connect.scss */
+#connect .form-postal-code input[type=submit] {
+  width: 260px;
+  height: 48px;
+  text-align: center;
+  line-height: 42px;
+  font-size: 24px;
+  color: #4c90c1;
+  background: transparent;
+  border: 1px solid #4c90c1;
+  border-radius: 5px;
+}
+/* line 142, scss/modules/_connect.scss */
+#connect .form-postal-code input[type=submit].blocked {
+  border-color: gray;
+  color: gray;
+  opacity: .6;
+}
+/* line 149, scss/modules/_connect.scss */
+#connect .form-postal-code p {
+  margin-bottom: 15px;
+}
+/* line 156, scss/modules/_connect.scss */
+#connect .hide {
+  display: none;
+}
+
+/* line 4, scss/modules/_playsongs.scss */
+.playsongs .playsong-container {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+/* line 12, scss/modules/_playsongs.scss */
+.playsongs .playsong-container .playsong-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+/* line 21, scss/modules/_playsongs.scss */
+.playsongs .playsong-container .playsong-bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: .8;
+}
+/* line 30, scss/modules/_playsongs.scss */
+.playsongs .playsong-container .user-btn-play-container {
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 40px;
+  background: #4c90c1;
+  padding-top: 13px;
+  padding-left: 3px;
+  box-sizing: border-box;
+}
+/* line 43, scss/modules/_playsongs.scss */
+.playsongs .playsong-container .user-btn-play-container .btn-play-pause {
+  margin: 0 auto;
+  opacity: 1;
+}
+/* line 50, scss/modules/_playsongs.scss */
+.playsongs .playsong-container .playsongs-infos {
+  position: relative;
+}
+/* line 52, scss/modules/_playsongs.scss */
+.playsongs .playsong-container .playsong-name {
+  width: 231px;
+  padding: 0 2px;
+  margin-left: 14px;
+  margin-top: 17px;
+}
+/* line 57, scss/modules/_playsongs.scss */
+.playsongs .playsong-container .playsong-name span {
+  background: rgba(0, 0, 0, 0.7);
+}
+/* line 62, scss/modules/_playsongs.scss */
+.playsongs .playsong-container .users-user {
+  position: absolute;
+  bottom: 1px;
+  height: 1px;
+  width: 100%;
+}
+/* line 70, scss/modules/_playsongs.scss */
+.playsongs .playsong-container .users-user .user-play-progress-bar-container .user-play-progress-bar-cache,
+.playsongs .playsong-container .users-user .user-play-progress-bar-container .user-play-progress-bar-played {
+  height: 5px;
+}
+/* line 76, scss/modules/_playsongs.scss */
+.playsongs .playsong-container .users-user:after {
+  display: none;
+}
+/* line 80, scss/modules/_playsongs.scss */
+.playsongs .playsong-container .btn-play-pause.pause {
+  background-position: -155px 0;
+}
+
+/* line 1, scss/modules/_visitors.scss */
+.visitor-message {
+  background: #1c1d1e;
+  /*background: rgba(15,15,15, 0.7);*/
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /*display: none;*/
+  display: block;
+  opacity: 0;
+  z-index: -2000;
+  -webkit-transition: all 0.6s cubic-bezier(0.31, 0.96, 0.37, 0.97);
+  -moz-transition: all 0.6s cubic-bezier(0.31, 0.96, 0.37, 0.97);
+  -ms-transition: all 0.6s cubic-bezier(0.31, 0.96, 0.37, 0.97);
+  transition: all 0.6s cubic-bezier(0.31, 0.96, 0.37, 0.97);
+}
+/* line 15, scss/modules/_visitors.scss */
+.visitor-message.show {
+  z-index: 8000;
+  opacity: 1;
+}
+/* line 20, scss/modules/_visitors.scss */
+.visitor-message .visitor-message-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #1c1d1e;
+  padding-top: 55px;
+  box-sizing: border-box;
+  height: 80%;
+  width: 300px;
+  margin: auto;
+  text-align: center;
+}
+/* line 35, scss/modules/_visitors.scss */
+.visitor-message .visitor-message-container h3 {
+  font-size: 24px;
+}
+/* line 39, scss/modules/_visitors.scss */
+.visitor-message .visitor-message-container a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  background: #4c90c1;
+  text-align: center;
+  width: 165px;
+  margin: 0 auto;
+  margin-top: 30px;
+  border-radius: 10px;
+  height: 50px;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 16px;
+}
+/* line 55, scss/modules/_visitors.scss */
+.visitor-message .visitor-message-container a span {
+  display: block;
+  font-size: 16px;
+  font-family: "Ubuntu Bold";
+}
+/* line 66, scss/modules/_visitors.scss */
+.visitor-message .btn-cancel {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+}
+/* line 70, scss/modules/_visitors.scss */
+.visitor-message .btn-cancel .barret {
+  width: 25px;
+  height: 1px;
+  background: white;
+  display: block;
+}
+/* line 76, scss/modules/_visitors.scss */
+.visitor-message .btn-cancel .barret-1 {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* line 79, scss/modules/_visitors.scss */
+.visitor-message .btn-cancel .barret-2 {
+  -webkit-transform: rotate(-45deg) translate(0.5px, -0.5px);
+  -moz-transform: rotate(-45deg) translate(0.5px, -0.5px);
+  -ms-transform: rotate(-45deg) translate(0.5px, -0.5px);
+  transform: rotate(-45deg) translate(0.5px, -0.5px);
+}
+
+/* line 20, scss/master.scss */
+body {
+  background: #1c1d1e;
+  color: #d4d9de;
+  font-family: 'Ubuntu Light';
+  margin: 0;
+  font-size: 18px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+/* line 30, scss/master.scss */
+body .app-container {
+  overflow-x: hidden;
+  position: relative;
+  height: 100%;
+}
+
+/* line 38, scss/master.scss */
+main {
+  overflow: hidden;
+  overflow-y: scroll;
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  right: 10px;
+  bottom: 0;
+  padding-top: 15px;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+/* line 49, scss/master.scss */
+main.full-screen {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-top: 63px;
+}
+/* line 60, scss/master.scss */
+main.scrollBlock {
+  overflow: hidden;
+}
+/* line 64, scss/master.scss */
+main.scrollBlock.menuOpen {
+  opacity: 0.2;
+}
+
+/* line 72, scss/master.scss */
+*:focus {
+  outline: none;
+}
+
+/* line 77, scss/master.scss */
+.page {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background: #1c1d1e;
+}
+/* line 86, scss/master.scss */
+.page.Connect {
+  top: 0;
+}
+/* line 89, scss/master.scss */
+.page.Messages {
+  top: 50px;
+}
+
+/* line 94, scss/master.scss */
+.relative {
+  position: relative;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+}
+
+/* line 102, scss/master.scss */
+.alert {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  z-index: 50;
+  display: none;
+}
+/* line 116, scss/master.scss */
+.alert.show {
+  display: block;
+}
+/* line 120, scss/master.scss */
+.alert .content {
+  margin-top: 150px;
+  position: relative;
+}
+/* line 125, scss/master.scss */
+.alert h3 {
+  margin-top: 15px;
+}
+/* line 129, scss/master.scss */
+.alert .actions-container {
+  margin-top: 10px;
+}
+/* line 131, scss/master.scss */
+.alert .actions-container button {
+  border: 1px solid white;
+  padding: 7px 10px;
+  background: transparent;
+  color: white;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+/* line 139, scss/master.scss */
+.alert .actions-container button.btn-delete {
+  background: #4c90c1;
+  color: #4c90c1;
+  border-color: #4c90c1;
+  color: white;
+}
+/* line 148, scss/master.scss */
+.alert:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.95;
+  background: #1c1d1e;
+}
+
+/* line 163, scss/master.scss */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 165, scss/master.scss */
+h1, h2, h3, h4, h5, p {
+  font-weight: normal;
+  margin: 0;
+}
+
+/* line 170, scss/master.scss */
+h2.title {
+  font-size: 14px;
+  opacity: .4;
+  position: relative;
+  margin-bottom: 21px;
+  padding: 0 10px;
+}
+/* line 178, scss/master.scss */
+h2.title:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #5b5b5b;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+}
+
+/* line 190, scss/master.scss */
+p.text {
+  padding: 0 10px;
+  font-size: 16px;
+  font-family: 'Droid Sans';
+  line-height: 1.6;
+}
+
+/* line 199, scss/master.scss */
+.arrow-left {
+  background: url(../img/sprite.png) no-repeat;
+  background-position: -142px 0;
+  width: 7px;
+  height: 13px;
+}
+
+/* line 206, scss/master.scss */
+.btn-send {
+  width: 22px;
+  height: 22px;
+  background: url(../img/sprite.png) no-repeat;
+  background-position: -68px -24px;
+}
+
+/* line 212, scss/master.scss */
+.ico-input {
+  position: relative;
+}
+/* line 216, scss/master.scss */
+.ico-input:after, .ico-input:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  background: url(../img/sprite.png) no-repeat;
+}
+/* line 225, scss/master.scss */
+.ico-input.ico-instrument:before, .ico-input.ico-musicStyle:before, .ico-input.ico-edit:before, .ico-input.ico-facebook:after, .ico-input.ico-twitter:after {
+  left: 15px;
+}
+/* line 233, scss/master.scss */
+.ico-input.ico-instrument:before {
+  width: 20px;
+  height: 20px;
+  background-position: 0 -23px;
+}
+/* line 237, scss/master.scss */
+.ico-input.ico-musicStyle:before {
+  width: 20px;
+  height: 15px;
+  background-position: -23px -26px;
+}
+/* line 241, scss/master.scss */
+.ico-input.ico-edit:before {
+  width: 15px;
+  height: 22px;
+  background-position: -44px -23px;
+}
+/* line 247, scss/master.scss */
+.ico-input.ico-facebook:after {
+  width: 9px;
+  height: 22px;
+  background-position: -100px -23px;
+  left: 18px;
+}
+/* line 253, scss/master.scss */
+.ico-input.ico-twitter:after {
+  width: 23px;
+  height: 22px;
+  background-position: -112px -23px;
+}
+/* line 258, scss/master.scss */
+.ico-input.ico-facebook:before, .ico-input.ico-twitter:before {
+  background: red;
+  width: 50px;
+  left: 0;
+  height: 100%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+/* line 267, scss/master.scss */
+.ico-input.ico-facebook:before {
+  background: #3b5998;
+}
+/* line 270, scss/master.scss */
+.ico-input.ico-twitter:before {
+  background: #55acee;
+}
+
+/* line 279, scss/master.scss */
+.btn-play-pause {
+  width: 15px;
+  height: 15px;
+  background: url(../img/sprite.png) no-repeat;
+  opacity: .2;
+}
+/* line 285, scss/master.scss */
+.btn-play-pause.pause {
+  background-position: -15px 0;
+  opacity: 1;
+}
+
+/* line 291, scss/master.scss */
+.btn-sendMsg {
+  width: 24px;
+  height: 15px;
+  background: url(../img/sprite.png) no-repeat;
+  opacity: .3;
+  background-position: -81px 0;
+}
+
+/* line 302, scss/master.scss */
+.no-message {
+  text-align: center;
+  width: 213px;
+  font-size: 29px;
+  margin: 0 auto;
+  margin-top: 20%;
+  display: none;
+}
+/* line 310, scss/master.scss */
+.no-message.show {
+  display: block;
+}
+
+/* line 315, scss/master.scss */
+.content-container {
+  padding: 0 10px;
+}
+
+/* line 319, scss/master.scss */
+.width-small {
+  width: 70px;
+}
+
+/* line 322, scss/master.scss */
+.width-medium {
+  width: 144px;
+}
+
+/* line 325, scss/master.scss */
+.width-very-small {
+  width: 50px;
+}
+
+/* line 329, scss/master.scss */
+.text-small {
+  font-size: 12px;
+  opacity: .4;
+}
+
+/* line 335, scss/master.scss */
+ul.list-inline li {
+  float: left;
+}
+/* line 336, scss/master.scss */
+ul.list-inline:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* line 343, scss/master.scss */
+.hide {
+  display: none;
+}
+
+/* line 348, scss/master.scss */
+.pull-left {
+  float: left;
+}
+
+/* line 352, scss/master.scss */
+.pull-right {
+  float: right;
+}
+
+/* line 356, scss/master.scss */
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* line 370, scss/master.scss */
+.instrument-img {
+  width: 50px;
+  height: 40px;
+  background: url(../img/sprite-instruments.png) no-repeat;
+  background-position: -50px 0;
+}
+/* line 377, scss/master.scss */
+.instrument-img.piano {
+  background-position: 0 0;
+}
+/* line 380, scss/master.scss */
+.instrument-img.chord {
+  background-position: -50px 0;
+}
+/* line 383, scss/master.scss */
+.instrument-img.saxophone {
+  background-position: -100px 0;
+}
+/* line 386, scss/master.scss */
+.instrument-img.song-writer {
+  background-position: -150px 0;
+}
+/* line 389, scss/master.scss */
+.instrument-img.voice {
+  background-position: -200px 0;
+}

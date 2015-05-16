@@ -1,0 +1,29 @@
+.filter {
+
+	width: 100%;  
+	height: 100%;
+	padding:20px;
+  	box-sizing: border-box;
+	z-index: 100;
+	position: fixed;
+	top: -237px;
+  	left: -130px;
+	visibility:hidden;
+	background: transparent;
+	opacity: 0;
+	z-index: 100;
+	
+	@include transform(scale(0.2));
+
+	@include transition(all,0.15s, $transiFast);
+	
+
+	&.show {
+    	visibility: visible;
+    	opacity: 1;
+    	background: $black-bg;
+		top:-37px;
+    	-webkit-transform:scale(1) translate3D(131px, 87px, 0);
+	}
+
+}

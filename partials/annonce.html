@@ -1,0 +1,73 @@
+<section id="annonce">
+	<div class="annonce-container">
+
+		
+		
+		<div class="annonce-header">
+			<ul>
+				<li class="instrument">{{annonce.Instrument}}</li>
+				<li class="musicStyle">{{annonce.Style}}</li>
+				<li class="distance">à <span>{{annonce.Distance}}</span> km</li>
+			</ul>	
+		</div>
+
+
+		<div class="annonce-description">
+			
+			<h2 class="title">Description</h2>
+			<p class="text">{{annonce.Description}}</p>
+
+		</div>
+
+
+		<div class="annonce-author">
+
+			<h2 class="title">Auteur de l'annonce</h2>
+
+			<div class="users-user noborder"><div class="users-list-container clearfix">
+
+
+
+				<div class="user-avatar width-small pull-left" ng-click="editProfilId(user.ID); goto('profil')">
+
+					<img ng-src="{{user.Avatar}}" alt="">
+
+				</div>
+
+
+				<div class="user-infos width-medium pull-left" ng-click="editProfilId(user.ID); goto('profil')">
+
+					<h3 class="user-name">{{user.Name}}</h3>
+					<p><span class="ico-litle ico-litle-guitare"></span>{{user.Instrument_Favorit}}</p>
+					<p><span class="ico-litle ico-litle-wave"></span>{{user.Style}}</p>
+
+				</div>
+
+
+				<div class="user-distance-play pull-right index{{$index}}">
+
+					<p class="user-distance">{{user.Distance}} <span class="text-small text-low-opacity">km</span></p>
+
+					<div class="user-btn-play-container"><div class="btn-play-pause" ng-click="play(user.ID_Soundcloud)"></div></div>
+
+					<div class="user-play-progress-bar-container">
+
+					<div class="user-play-progress-bar">
+						<div class="user-play-progress-bar-cache"></div>
+						<div class="user-play-progress-bar-played"></div>
+					</div>
+
+					</div>
+
+				</div>
+
+	    	</div></div>
+
+
+
+		<div class="annonce-btn-reply-container" ng-click="openMessage(user.ID)">
+			<a href="#/annonce" class="btn">Répondre à l'annonce</a>
+		</div>
+
+	</div>
+</section>

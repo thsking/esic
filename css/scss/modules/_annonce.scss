@@ -1,0 +1,113 @@
+#annonce {
+
+	padding: 0 10px;
+	padding-top: 63px;
+
+	&:before {
+		content:"";
+		display: block;
+		position: absolute;
+		top: -10px;
+		left: 0px;
+		width: 100%;
+		height: 312px;
+		background: url(../img/annonce-bg.png)no-repeat;
+		background-size: 100%;
+		z-index: 0;
+		opacity: .3;
+
+		@media (min-width: 375px){
+			height:263px;
+		}
+	
+	}
+
+	.annonce-header {
+
+		margin-bottom: 47px;
+		margin-top: 15px;
+
+		li {
+			position: relative;
+			text-align: center;
+			margin-bottom: 4px;
+			font-family: 'Ubuntu';
+
+			&.instrument {
+				font-size: 32px;
+			}
+			&.musicStyle {
+				font-size: 26px;
+			}
+			&.distance span {
+				font-size: 26px;
+			}
+
+			&.instrument:before,
+			&.musicStyle:before,
+			&.distance:before {
+				content:"";
+				display: block;
+				background: $sprite;
+				position: absolute;
+				left: 10px;
+				bottom: 5px;
+				width: 20px;
+				height: 20px;
+				opacity: .3;
+			}
+
+			&.instrument:before {
+				background-position: 0px -23px;
+			}
+			&.musicStyle:before {
+				background-position: -23px -28px;
+  				height: 10px;
+			}
+			&.distance:before {
+				background-position: -66px 0;
+				width: 15px; height: 15px;
+			}
+
+
+		}
+
+	}
+
+
+	.annonce-description {
+		margin-bottom: 15px;
+	}
+
+
+	.annonce-author {
+		
+		.users-user {
+			margin: 0 15px 20px 15px;
+			position: relative;
+		}
+
+		.user-avatar img {
+			width: 56px;
+			height: 56px;
+			border-radius: 56px;
+		}
+
+	}
+
+	.annonce-btn-reply-container {
+		margin-bottom:10px;
+		a.btn {
+			display: block;
+			width: 100%;
+			height: 40px;
+			background: $blue;
+			color: $white-txt;
+			text-align: center;
+			text-decoration: none;
+			line-height: 40px;
+			border-radius: 3px;
+		}
+	}
+
+}

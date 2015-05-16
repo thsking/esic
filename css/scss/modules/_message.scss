@@ -1,0 +1,104 @@
+#message {
+
+	margin-bottom: 66px;
+
+	.message {
+
+		margin-bottom: 10px;
+		font-family: "Droid Sans";
+		font-size: 14px;
+		line-height: 16px;
+
+		.message-container {
+		
+			color: $black-bg;
+			background: $white-txt;
+			max-width: 85%;
+			padding: 15px;
+			border-radius: 5px;
+			box-sizing:border-box;
+
+			position: relative;
+
+			&:before {
+				content:"";
+				display: block;
+				position: absolute;
+				bottom: 11px;
+				left: -5px;
+				width: 25px;
+				height: 25px;
+				background: $white-txt;
+				z-index: -1;
+
+				@include transform(rotate(45deg));
+			}
+
+			.message-infos {
+				margin-top: 10px;
+				font-size: 12px;
+			}
+
+
+
+		}
+
+
+		&.message-send .message-container {
+			background: $blue;
+			color: $white-txt;
+
+			&:before {
+				background:$blue;
+				left: auto;
+				right: -5px;
+			}
+		}
+
+	}
+
+
+	.message-answere {
+
+		position: fixed;
+		bottom: -2px;
+		left: 0;
+		width: 100%; 
+		min-height: 35px;
+		max-height: 150px;
+		padding: 10px 20px;
+
+		margin-top: 24px;
+		background: $black-bg;
+		border-top: 1px solid rgba(255,255,255,.4);
+
+		textarea {
+			border: none;	
+			background: transparent;
+			width: 75%;
+			height: 25px;
+			font-family: 'Droid Sans';
+			font-size: 14px;
+			margin-top: 6px;
+			color: $white-txt;
+			resize:none;
+
+			&:focus {
+				outline:none;
+			}
+
+		}
+
+
+		.btn-send {
+			margin-right: 40px;
+			margin-top: 6px;
+		}
+
+		
+
+	}
+
+	
+
+}

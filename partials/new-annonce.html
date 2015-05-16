@@ -1,0 +1,58 @@
+<section id="new-annonce">
+	<div class="new-annonce-container">
+		
+		<form class="form">
+			
+			<div class="select-container">
+
+        <select class="select" name="instrument"
+          ng-model="filterInstrument" 
+          ng-options="instrument as instrument.name for instrument in instruments"
+          ng-change="filterInstrumentUpdate()">
+          <option value="" disabled selected>Instrument</option>
+        </select>
+
+        <div class="select-selected ico-input ico-instrument">{{instrumentSelected}}</div>
+
+      </div>
+
+      <div class="select-container">
+
+        <select class="select" name="musicStyle"
+          ng-model="filterMusicStyle" 
+          ng-options="musicStyle as musicStyle.name for musicStyle in musicStyles"
+          ng-change="filterMusicStyleUpdate()">
+          <option value="" disabled selected>Style Musical</option>
+        </select>
+
+        <div class="select-selected ico-input ico-musicStyle">{{musicStyleSelected}}</div>
+
+      </div>
+
+      <div class="textarea-container">
+      	
+      	<label for="new-annonce-description" class="ico-input ico-edit">Description</label>
+				<textarea name="description" id="new-annonce-description" placeholder="Tapez votre description ici" ng-model="description"></textarea>
+
+      </div>
+
+
+
+      <div class="btn-submit-container"><input type="submit" value="CRÉER L'ANNONCE" class="btn-submit"></div>
+
+		</form>
+
+
+
+
+    <div class="alert">
+      <div class="content">
+        <h3>Veillez à bien remplir <br />tous les champs.</h3>
+        <div class="actions-container">
+          <button class="btn-cancel">OK</button>
+        </div>
+      </div>
+    </div>
+
+	</div>
+</section>

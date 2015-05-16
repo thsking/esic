@@ -1,0 +1,25 @@
+<div id="messages-list">
+	
+	<div class="messages-list-message users-user" ng-repeat="i in convers track by $index"><div class="messages-list-message-container clearfix" ng-click="goto('message');editConversId(convers[$index].conversation.ID)" ng-class="{new:convers[$index].messages_unread>0}">
+		
+		<div class="messages-list-photo width-small pull-left">
+			<img ng-src="{{convers[$index].user.Avatar}}" alt="">
+		</div>
+
+		<div class="messages-list-infos width-medium pull-left">
+			<h3>{{convers[$index].user.Name}}</h3>
+			<p class="gray-noPadLeft">{{messageWarp(convers[$index].last_message.Message)}}</p>
+		</div>
+
+		<div class="messages-list-time pull-right">
+			<p>14:26</p>
+		</div>
+
+		
+	</div></div>
+
+
+	<p class="no-message">Vous n'avez pas encore reçu de message.</p>
+
+
+</div>

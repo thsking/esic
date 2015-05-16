@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="fr" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>Esic</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+  <link rel="stylesheet" href="css/master.css"/>
+  <link rel="shortcut icon" href="img/favico.png">
+</head>
+<body ng-controller="appCtrl"><div class="app-container">
+  
+  <header>
+
+    <div class="header-container clearfix" ng-class="{nobg:activePage=='/annonce'||activePage=='/profil'}">
+
+      <div id="previous-btn" class="pull-left" ng-click="goBack()" ng-class="{hide:activePage=='/users-list' || activePage=='/annonces-list' || activePage=='/gestion-annonces' || activePage=='/messages-list'}"><div class="arrow-left"></div></div>
+
+      <div id="filter-btn" class="pull-left" 
+        ng-click="filterToggle()" ng-class="{selected:filterOpen,show:activePage=='/users-list' || activePage=='/annonces-list' }"><span>Filtrer</span>
+      </div>
+
+      <div id="add-annonces-btn" class="pull-left" ng-class="{show:activePage=='/gestion-annonces'}" ng-click="goto('/new-annonce')">+</div>    
+
+      <div id="page-title">{{activePageName}}</div>
+
+    </div>
+
+
+    <nav ng-class="{open:menuOpen==true}" ng-controller="navCtrl">
+
+      <div id="menu-btn" ng-click="menuToggle()" ng-class="{open:menuOpen==true, 'btn-nobg':activePage=='/annonce'||activePage=='/profil'}">
+
+        <div class="menu-btn-container">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </div>
+
+      </div>
+      
+      <div class="nav-container">
+      
+        <h4>Menu</h4>
+
+        <ul>
+
+          <li class="show-forConnected"><a href="#/profil" class="profil-link" ng-click="editProfilId(connectUserId);clearBackInfo();goto('/profil')">
+            <img ng-src="{{urlAvatar}}" alt="">
+            Mon Profil
+          </a></li>
+          
+          <li><a href="#/annonces-list" ng-click="clearBackInfo()">
+            ANNONCES
+          </a></li>
+          <li><a href="#/users-list" ng-click="clearBackInfo()">ALENTOURS</a></li>
+
+          <li class="show-forConnected"><a href="#/gestion-annonces" ng-click="clearBackInfo()">Mes Annonces</a></li>
+
+          <li class="show-forConnected"><a href="#/messages-list" ng-click="clearBackInfo(); clearNotifications();">Messages <span ng-class="{notifications:notificationsNumber>0}">{{notificationsNumber}}</span></a></li>
+          <li class="show-forConnected"><a href="#" ng-click="logout()" ng-click="clearBackInfo()">Déconnection</a></li>
+
+        </ul>
+
+        <div class="show-visitor">
+          <a href="./">Activer toutes les fonctionnaliter<span>Se connecter avec SoundCloud</span></a>
+        </div>
+    
+      </div>
+
+    </nav>
+
+  </header>
+
+
+  
+
+  
+  <main id="main" scroll ng-class="{'full-screen':activePage=='/annonce' ||activePage=='/profil'||activePage=='/messages-list',
+  scrollBlock:menuOpen==true||filterOpen==true, 'menuOpen':menuOpen==true}">
+
+
+    <div class="content-container">
+      
+      <div class="load-indicator-container">
+        <div class="load-indicator" ng-hide="!layout.loading">
+          <img src="./img/loading2.gif" alt="">
+        </div>
+      </div>
+
+
+      
+
+
+      <div ng-view class="page"
+      ng-class="activePageName" 
+      ng-animate="{enter: '.ng-enter', leave: '.ng-leave'" ></div>
+
+    </div>
+
+  
+
+    <div class="show-visitor visitor-message">
+      <div class="show-visitor visitor-message-container">
+
+        <h3>Pour bénéficier de cette fonctionnalité</h3>
+        <p><a href="./">connectez vous avec <span>SoundCloud</span></a></p>
+
+      
+
+      </div>
+
+        <div class="btn-cancel">
+          <span class="barret barret-1"></span>
+          <span class="barret barret-2"></span>
+        </div>
+
+    </div>
+
+
+  </main>
+
+
+</div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="lib/angular/angular-route.min.js"></script>
+  <script src="lib/angular/angular-animate.js"></script>
+  <script src="lib/angular/angular-resource.js"></script>
+  <script src="lib/quirksmode.js"></script>
+  <script src="http://connect.soundcloud.com/sdk.js"></script>
+  <script src="lib/elastic.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+
+    /*SC.initialize({
+        client_id: "264899dc03321fc2b89e7ff4816d7122",
+        redirect_uri: "http://localhost/_heaj/tfe-build/",
+    });*/
+
+    SC.initialize({
+        client_id: "b072da9efab20fba04e9c81e8eb1faa8",
+        redirect_uri: "http://thsking.be/tfe/build",
+    });
+
+  </script>
+  <script src="js/controllers.js"></script>
+  <script src="js/directives.js"></script>
+  <!-- <script src="js/services.js"></script>
+  
+  <script src="js/filters.js"></script>
+   -->
+
+</body>
+</html>

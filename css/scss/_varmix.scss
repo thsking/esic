@@ -1,0 +1,52 @@
+// var 
+$black-bg : #1c1d1e;
+$white-txt: #d4d9de;
+$blue     : #4c90c1;
+$blue-fb  : #3b5998;
+$blue-tw  : #55acee;
+$gray     : #5b5b5b;
+
+$blue-facebook : #3b5998;
+$blue-twitter : #55acee;
+$orange-soundcloud : #f8630e;
+
+$sprite   : url(../img/sprite.png) no-repeat;
+
+$transiFast : cubic-bezier(.18,1,.71,1);
+
+$transi	: cubic-bezier(.81,.76,.78,.98);
+
+$transiOut : cubic-bezier(.31,.96,.37,.97);
+
+
+
+// mixin
+
+@mixin transition($elt, $time, $easing){
+  -webkit-transition: $elt $time $easing;
+       -moz-transition: $elt $time $easing;
+        -ms-transition: $elt $time $easing;
+            transition: $elt $time $easing;
+}
+
+@mixin transitionLat($elt, $time, $easing, $lat){
+	-webkit-transition: $elt $time $easing $lat;
+       -moz-transition: $elt $time $easing $lat;
+        -ms-transition: $elt $time $easing $lat;
+            transition: $elt $time $easing $lat;
+}
+
+@mixin animation($name, $time, $alt, $easing){
+	-webkit-animation: $name $time $alt $easing;
+       -moz-animation: $name $time $alt $easing;
+        -ms-animation: $name $time $alt $easing;
+            animation: $name $time $alt $easing;
+}
+
+@mixin transform($transform){
+	-webkit-transform: $transform;
+       -moz-transform: $transform;
+        -ms-transform: $transform;
+            transform: $transform;
+
+}

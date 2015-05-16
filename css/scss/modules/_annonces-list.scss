@@ -1,0 +1,42 @@
+#annonces-list {
+
+	@include transition(all, 0.3s, ease-in);
+
+	&.low-opa {
+		opacity: .3;
+
+		@include transition(all, 0.3s, ease-in);
+	}
+
+	.annonces-list-annonce {
+
+		position: relative;
+		margin-bottom: 30px;
+
+		&:after {
+			content: '';
+			display: block;
+			width: 295px;
+
+			height: 1px;
+
+			background: $sprite;
+			background-position: 0 -19px;
+
+			position: absolute;
+			left: 0;right: 0;
+			margin: 0 auto;
+			bottom: -15px;
+			opacity: 0.1;
+		}
+
+		.annonce-instrument {
+			padding-top: 5px;
+		}
+
+		.annonce-distance {
+			margin-top: 4px;
+		}
+
+	}
+}

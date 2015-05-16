@@ -1,0 +1,14 @@
+.load-indicator-container {
+	.load-indicator {
+		top: 15px;
+		width: 50px;height: 50px;
+		z-index: 800;
+		position: relative;
+		margin: 0 auto;
+		text-align: center;
+
+		img {
+			width: 100%;
+		}
+	}
+}

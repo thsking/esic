@@ -1,0 +1,103 @@
+@-webkit-keyframes slideOutLeft {
+	from { 
+		opacity: 1;
+	}
+    to { 
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes slideInRight {
+    from    { 	
+    	-webkit-transform:scale(0.95);
+    	top: 0;
+		opacity: 0;
+	}
+    to {
+    	-webkit-transform:scale(1);
+    	opacity: 1;
+    }
+}
+
+@-moz-keyframes slideOutLeft {
+	from { 
+		opacity: 1;
+	}
+    to { 
+		opacity: 0;
+	}
+}
+
+@-moz-keyframes slideInRight {
+    from    { 	
+    	-webkit-transform:scale(0.95);
+    	top: 0;
+		opacity: 0;
+	}
+    to {
+    	-webkit-transform:scale(1);
+    	opacity: 1;
+    }
+}
+
+@-ms-keyframes slideOutLeft {
+	from { 
+		opacity: 1;
+	}
+    to { 
+		opacity: 0;
+	}
+}
+
+@-ms-keyframes slideInRight {
+    from    { 	
+    	-webkit-transform:scale(0.95);
+    	top: 0;
+		opacity: 0;
+	}
+    to {
+    	-webkit-transform:scale(1);
+    	opacity: 1;
+    }
+}
+
+@keyframes slideOutLeft {
+	from { 
+		opacity: 1;
+	}
+    to { 
+		opacity: 0;
+	}
+}
+
+@keyframes slideInRight {
+    from    { 	
+    	-webkit-transform:scale(0.75);
+    	top: 0;
+		opacity: 0;
+	}
+    to {
+    	-webkit-transform:scale(1);
+    	opacity: 1;
+    }
+}
+
+
+.ng-enter { 
+	@include animation(slideInRight, 0.4s, both, $transi);
+	z-index: 150; 
+		
+	height: 100%;
+  	overflow: hidden;
+
+}
+.ng-leave { 
+	display: none;
+	opacity: 1;
+	z-index: 120; 
+
+}
+
+.page.ng-enter {
+	height: 100%;
+}

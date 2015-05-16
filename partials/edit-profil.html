@@ -1,0 +1,72 @@
+<section id="edit-profil">
+	
+	<div class="info-info hide">
+		
+		<h2 class="title">Assurez-vous d'être vu</h2>
+		
+		<p>Entrez vos informantions principales vous permettra une plus grande visibilité.</p>
+
+	</div>
+	
+	<h2 class="title">Mes informations princiaples</h2>
+
+	<form method="post" class="form">
+		
+
+		<div class="select-container">
+
+			<select class="select" name="instrument"
+			 ng-model="filterInstrument" 
+			 ng-options="instrument as instrument.name for instrument in instruments"
+			 ng-change="filterInstrumentUpdate()">
+			 <option value="" disabled selected>Instrument</option>
+			</select>
+
+        <div class="select-selected ico-input ico-instrument">{{instrumentSelected}}</div>
+
+      </div>
+
+      <div class="select-container">
+
+        <select class="select" name="musicStyle"
+          ng-model="filterMusicStyle" 
+          ng-options="musicStyle as musicStyle.name for musicStyle in musicStyles"
+          ng-change="filterMusicStyleUpdate()">
+          <option value="5" disabled selected>Style Musical</option>
+        </select>
+
+        <div class="select-selected ico-input ico-musicStyle">{{musicStyleSelected}}</div>
+
+      </div>
+
+		
+      <div class="textarea-container">
+      		
+      	<label for="edit-profil-description" class="ico-input ico-edit">Déscription</label>
+				<textarea name="description" id="edit-profil-description" placeholder="Tapez votre description ici" ng-model="description"></textarea>
+
+      </div>
+
+
+      <h2 class="title">Liens vers vos réseaux sociaux</h2>
+
+
+      <div class="input-container ico-input ico-twitter">
+      	<input type="text" name="link-twitter" placeholder="Twitter" class="twitter with-ico ico" ng-model="link_twitter">
+      </div>
+      <div class="input-container ico-input ico-facebook">
+      	<input type="text" name="link-facebook" placeholder="Facebook" class="facebook with-ico" ng-model="link_facebook">
+		</div>
+
+
+
+      <div class="btn-submit-container"><input type="submit" value="ÉDITER" class="btn-submit"></div>
+
+
+
+
+	</form>
+
+
+
+</section>

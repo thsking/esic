@@ -1,0 +1,67 @@
+<section id="annonces-list" class="users-annonces-list" ng-class="">
+
+
+	<div class="filter" ng-class="{show:filterOpen==true}" ng-controller="filterCtrl">
+        <div class="filter-container">
+          <form class="form">
+
+            <div class="select-container">
+
+              <select class="select" name="instrument"
+                ng-model="filterInstrument" 
+                ng-options="instrument as instrument.name for instrument in instruments"
+                ng-change="filterInstrumentUpdate()">
+                <option value="" disabled selected>Instrument</option>
+              </select>
+
+              <div class="select-selected">{{instrumentSelected}}</div>
+
+            </div>
+
+            <div class="select-container">
+
+              <select class="select" name="musicStyle"
+                ng-model="filterMusicStyle" 
+                ng-options="musicStyle as musicStyle.name for musicStyle in musicStyles"
+                ng-change="filterMusicStyleUpdate()">
+                <option value="" disabled selected>Style Musical</option>
+              </select>
+
+              <div class="select-selected">{{musicStyleSelected}}</div>
+
+            </div>
+
+            <div class="btn-submit-container"><input type="submit" value="Filtrer" class="btn-submit" ng-click="filter(instrumentSelected, musicStyleSelected)"></div>
+
+            <div class="btn-reset-container"><button class="btn-reset" ng-click="filterReset()">Réinitialiser</button></div>
+
+          </form>
+        </div>
+  	</div>
+	
+
+	<div class="annonces-list-annonce users-user"  ng-repeat="i in annonces track by $index"><div class="annonces-list-annonce-container clearfix" ng-click="goto('annonce'); editAnnonceId(annonces[$index].ID);">
+
+		<div class="annonce-instrument width-small pull-left">
+			<!-- <img src="./img/annonce-instrument.png" alt=""> -->
+      <div class="instrument-img {{classInstrument(annonces[$index].Instrument)}}"></div>
+
+		</div>
+
+		<div class="annonce-infos width-medium pull-left">
+
+			<h3>{{annonces[$index].Instrument}}</h3>
+      		<p><span class="ico-litle ico-litle-wave"></span>{{annonces[$index].Style}}</p>
+
+		</div>
+
+		<div class="annonce-distance width-very-small pull-right">
+
+			<p class="user-distance">{{annonces[$index].Distance}} <span class="text-small text-low-opacity">km</span></p>
+
+		</div>
+		
+	</div></div>
+
+
+</section>

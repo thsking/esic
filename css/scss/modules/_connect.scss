@@ -1,0 +1,160 @@
+#connect {
+
+	position: absolute;
+	left: 0;
+	right: 0;
+	top:0;
+	bottom: 0;
+
+	background: black;
+
+	background: url(../img/Page-Login.jpg)no-repeat;
+	background-size: 100% auto;
+
+
+	.logo-container {
+
+		width: 104px;
+		height: 62px;
+		margin: 0 auto;
+		
+		position: absolute;
+		top: 15%;
+		left: 0;
+		right: 0;
+
+	}
+
+	.actions-container {
+
+		position: absolute;
+		bottom: 16%;
+		left: 0;
+		right: 0;
+
+		text-align: center;
+		
+		a {
+			text-align: center;
+			color: white;
+			text-decoration: none;
+		}
+
+		.btn-soundcloud-container {
+
+			margin-bottom: 30px;
+
+			button {
+				width: 261px;
+				height: 50px;
+				background: url(../img/btn-soundcloud.png);
+				border: none;
+				margin: 0 auto;
+				display: block;
+				position: relative;
+				font-family: 'Ubuntu Light';
+				
+
+				color: white;
+				font-size: 16px;
+				line-height: 16px;
+				text-align: left;
+
+
+				span {
+					width: 179px;
+					position: absolute;
+					right: 0;
+					top: 8px;
+				}
+
+				strong {
+					font-weight: normal;
+					font-family: 'Ubuntu Bold'
+				}
+			}
+
+		}
+
+	}
+
+	.info-connect {
+
+		position: absolute;
+		bottom: 29%;
+		left: 0;
+		right: 0;
+		
+		width: 260px;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 18px;
+
+	}
+
+
+	.form-postal-code {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		color: $white-txt;
+		padding: 25px 10px;
+		text-align: center;
+
+		@media (min-height: 550px){
+			bottom: 10%;
+		}
+
+		h2 {
+			width: 230px;
+			margin: 0 auto;
+			font-size: 24px;
+			font-family: 'Ubuntu';
+			margin-bottom: 18px;
+		}
+
+		input[type=text] {
+			background:transparent;
+			border:none;
+			font-size: 62px;
+			text-align: center;
+			width: 190px;
+			margin: 0 auto;
+			color: $blue;
+			margin-bottom:5px;
+			&:focus {
+				outline: none;
+			}
+		}
+
+		input[type=submit]{
+			width: 260px;
+			height: 48px;
+			text-align: center;
+			line-height: 42px;
+			font-size: 24px;
+			color: $blue;
+			background:transparent;
+			border: 1px solid $blue;
+			border-radius: 5px;
+
+			&.blocked {
+				border-color: gray;
+				color: gray;
+				opacity: .6;
+			}
+		}
+
+		p {
+			margin-bottom: 15px;
+		}
+
+	}
+
+
+	.hide {
+		display: none;
+	}
+
+}

@@ -1,0 +1,48 @@
+<section id="edit-annonces">
+	
+	
+	<div class="annonces-list-annonce users-user"  ng-repeat="i in annonces track by $index"><div class="annonces-list-annonce-container clearfix" >
+
+		
+		<div class="annonce-instrument width-small pull-left"
+		ng-click="goto('annonce'); editAnnonceId(annonces[$index].ID);">
+      		<div class="instrument-img {{classInstrument(annonces[$index].Instrument)}}"></div>
+		</div>
+
+		<div class="annonce-infos width-medium pull-left"
+		ng-click="goto('annonce'); editAnnonceId(annonces[$index].ID);">
+
+			<h3>{{annonces[$index].Instrument}}</h3>
+      		<p><span class="ico-litle ico-litle-wave"></span>{{annonces[$index].Style}}</p>
+
+		</div>
+
+		<div class="annonce-distance width-small pull-right">
+
+			<p class="user-vues gestion-annonces">{{annonces[$index].Vues}} <span class="text-small text-low-opacity">vues</span></p>
+
+			<div class="user-delete" ng-click="deleteAnnonce(annonces[$index].ID)">
+				
+			</div>
+
+		</div>
+
+		
+	</div></div>
+
+
+	<div class="alert">
+		<div class="content">
+			<h3>Voulez-vous vraiment supprimer cette annonce ?</h3>
+			<div class="actions-container">
+				<button class="btn-cancel">Annuler</button>
+				<button class="btn-delete">Supprimer</button>
+			</div>
+		</div>
+	</div>
+
+
+	<p class="no-message show">Vous n'avez <br />pas encore créé d'annonce.</p>
+
+
+</section>

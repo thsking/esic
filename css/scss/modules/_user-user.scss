@@ -1,0 +1,160 @@
+.users-user {
+
+	position: relative;
+	margin-bottom: 20px;
+
+	&:after {
+		content: '';
+		display: block;
+		width: 295px;
+		height: 1px;
+
+		background: $sprite;
+		background-position: 0 -19px;
+
+		position: absolute;
+		bottom: -10px;
+		left: 0; right: 0;
+		margin: 0 auto;
+		opacity: 0.1;
+	}
+
+	&.noborder:after {
+		display: none;
+	}
+
+
+	h3 {
+		color: $blue;
+		margin-bottom: 3px;
+		font-size: 18px;
+		font-family: 'Ubuntu';
+	}
+	p {
+
+		font-size: 14px;
+		position: relative;
+		padding-left: 25px;
+		padding-bottom: 3px;
+
+		&.gray-noPadLeft {
+			opacity: .5;
+			padding-left: 0;
+		}
+
+		span.ico-litle {
+			width: 15px;
+			height: 15px;
+			background: $sprite;
+
+			display: block;
+			position: absolute;
+
+			left: 0px;
+			top: 2px;
+
+			&.ico-litle-guitare{
+				background-position: -33px 0;
+			}
+			&.ico-litle-wave{
+				background-position: -51px 0;
+			}
+			&.ico-litle-distance {
+				width: 11px;
+				background-position: -68px 0;
+			}
+		}
+
+	}
+
+
+	.user-avatar {
+		margin-top: 4px;
+	}
+
+
+	.user-distance {
+		padding: 0;
+		text-align: right;
+	}
+	.user-vues {
+		margin-top: 8px;
+		margin-right: 10px;
+		padding: 0;
+		text-align: right;
+		line-height: 0.8;
+		&.gestion-annonces {
+	  		margin-bottom: 23px;
+  		}
+	}
+	.user-delete {
+		position: absolute;
+		bottom:-5px;
+		right: 9px;
+		width: 15px;
+		height: 20px;
+		&:after {
+			content: "";
+			display:block;
+			position: absolute;
+			background: $sprite;
+			background-position: -175px -26px;
+			width: 17px;
+			height: 18px;
+		}
+	}
+	
+
+	.user-distance-play {
+		font-size: 14px;
+		margin-top: 6px;
+
+		.user-distance {
+			padding: 0;
+			text-align: right;
+		}
+
+		.user-btn-play-container {
+			position: absolute;
+			right: 0;
+			bottom: 5px;
+			&.hide {
+				display: none;
+			}
+		}
+
+		.user-play-progress-bar-container {
+
+			display: none;
+
+			&.show {
+				display: block;
+			}
+
+			.user-play-progress-bar-cache,
+			.user-play-progress-bar-played {
+				width: 100%;
+				height: 2px;
+				background: $gray;
+				position: absolute;
+				left: 0;
+				bottom:-9px;
+			}
+			.user-play-progress-bar-played {
+				width: 0%;
+				background: $blue;
+			}
+		}
+
+		.user-btn-sendMsg-container {
+			position: absolute;
+			right: 0;
+			bottom: 5px;
+			display: none;
+			&.show {
+				display: block;
+			}			
+		}
+	}
+
+}

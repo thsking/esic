@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Ubuntu';
+  src: url(fonts/Ubuntu-Regular.ttf);
+}
+@font-face {
+  font-family: 'Ubuntu Light';
+  src: url(fonts/Ubuntu-Light.ttf);
+}
+@font-face {
+  font-family: 'Ubuntu Bold';
+  src: url(fonts/Ubuntu-Bold.ttf);
+}
+@font-face {
+  font-family: 'Droid Sans';
+  src: url(fonts/DroidSans.ttf);
+}

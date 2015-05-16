@@ -1,0 +1,85 @@
+.visitor-message {
+	background: $black-bg;
+	/*background: rgba(15,15,15, 0.7);*/
+	position: fixed;
+	top: 0; right: 0; bottom: 0; left: 0;
+
+	/*display: none;*/
+	display: block;
+	opacity: 0;
+
+	z-index: -2000;
+
+	@include transition(all, 0.6s, $transiOut);
+
+	&.show {
+		z-index: 8000;
+		opacity: 1;
+	}
+
+	.visitor-message-container {
+		
+		position: absolute;
+		top: 0; left: 0; right: 0; bottom: 0;
+		background: $black-bg;
+
+		padding-top: 55px;
+		box-sizing: border-box;
+		height: 80%;
+		width: 300px;
+
+		margin: auto;
+		text-align: center;
+
+
+		h3 {
+			font-size: 24px;
+		}
+
+		a {
+			display: block;
+			text-decoration: none;
+			color: white;
+			background: #4c90c1;
+			text-align: center;
+			width: 165px;
+			margin: 0 auto;
+			margin-top: 30px;
+			border-radius: 10px;
+			height: 50px;
+			padding: 8px 16px;
+			box-sizing: border-box;
+			font-size: 14px;
+			line-height: 16px;
+
+			span {
+				display: block;
+				font-size: 16px;
+				font-family: "Ubuntu Bold";
+			}
+		}
+
+		
+	}
+
+
+	.btn-cancel {
+		position: absolute;
+		top: 30px;
+		right: 20px;
+		.barret {
+			width: 25px;
+			height: 1px;
+			background: white;
+			display: block;
+		}
+		.barret-1 {
+			@include transform(rotate(45deg));
+		}
+		.barret-2 {
+			@include transform(rotate(-45deg) translate(0.5px,-0.5px));
+		}
+	}
+
+
+}

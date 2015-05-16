@@ -1,0 +1,392 @@
+@import 'varmix';
+@import 'fonts ';
+@import 'modules/filter';
+@import 'modules/header';
+@import 'modules/users-list';
+@import 'modules/user-user';
+@import 'modules/annonces-list';
+@import 'modules/form';
+@import 'modules/annonce';
+@import 'modules/messages-list';
+@import 'modules/message';
+@import 'modules/profil';	
+@import 'modules/edit-profil';
+@import 'modules/css-animation';
+@import 'modules/load-indicator';
+@import 'modules/connect';
+@import 'modules/playsongs';
+@import 'modules/visitors';
+
+body {
+	background: $black-bg;
+	color: $white-txt;
+	font-family: 'Ubuntu Light';
+	margin: 0;
+	font-size: 18px;
+
+	position: absolute;
+	top: 0; bottom: 0; left: 0; right: 0;
+
+	.app-container {
+		overflow-x: hidden;
+		position: relative;
+		height: 100%;
+	}
+}
+
+
+main {
+	overflow: hidden;
+	overflow-y:scroll;
+	position: absolute;
+	top: 50px;
+	left: 10px;
+	right: 10px;
+	bottom: 0;
+	
+	padding-top: 15px;
+
+	&.full-screen {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding-top: 63px;
+	}
+
+
+	@include transition(all, 0.2s, ease-in);
+
+	&.scrollBlock {
+		overflow: hidden;
+
+
+		&.menuOpen {
+			opacity: 0.2;
+		}
+	}
+
+
+}
+
+*:focus {
+	outline: none;
+}
+
+
+.page {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	background: $black-bg;
+
+	&.Connect {
+		top: 0;
+	}
+	&.Messages {
+		top: 50px;
+	}
+}
+
+.relative{
+	position: relative;
+	left: auto;
+	right: auto;
+	top: auto;
+	bottom: auto;
+}
+
+.alert {
+
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+
+	text-align: center;
+
+	z-index: 50;
+
+	display: none;
+
+	&.show {
+		display: block;
+	}
+
+	.content {
+		margin-top: 150px;
+		position: relative;
+	}
+
+	h3 {
+		margin-top: 15px;
+	}
+	
+	.actions-container {
+		margin-top: 10px;
+		button {
+			border:1px solid white;
+			padding: 7px 10px;
+			background: transparent;
+			color: white;
+			border-radius: 5px;
+			margin-right: 5px;
+			
+			&.btn-delete {
+				background: $blue;
+				color: $blue;
+				border-color: $blue;
+				color: white;
+			}
+		}
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0.95;
+
+		background:$black-bg;
+
+	}
+}
+
+
+ul {list-style: none;margin: 0;padding: 0;}
+
+h1,h2,h3,h4,h5, p {
+	font-weight: normal;
+	margin: 0;
+}
+
+h2.title {
+
+	font-size: 14px;
+	opacity: .4;
+	position: relative;
+	margin-bottom: 21px;
+	padding: 0 10px;
+
+	&:after {
+		content:"";
+		display: block;
+		width: 100%;
+		height: 1px;
+		background: $gray;
+		position: absolute;
+		left: 0;
+		bottom: -8px;
+	}
+}
+
+p.text {
+	padding: 0 10px;
+	font-size: 16px;
+	font-family: 'Droid Sans';
+	line-height: 1.6;
+}
+
+
+
+.arrow-left {
+	background: $sprite;
+	background-position: -142px 0;
+	width: 7px;
+	height: 13px;
+}
+
+.btn-send {
+	width: 22px; height: 22px;
+	background: $sprite;
+	background-position: -68px -24px;
+}
+
+.ico-input {
+
+	position: relative;
+
+	&:after, &:before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0; bottom: 0;
+		margin: auto 0;
+		background: $sprite;
+	}
+
+	&.ico-instrument:before,
+	&.ico-musicStyle:before,
+	&.ico-edit:before,
+	&.ico-facebook:after,
+	&.ico-twitter:after {
+		left: 15px;
+
+	}
+	&.ico-instrument:before {
+		width: 20px; height: 20px;
+		background-position: 0 -23px;
+	}
+	&.ico-musicStyle:before {
+		width: 20px; height: 15px;
+		background-position: -23px -26px;
+	}
+	&.ico-edit:before {
+		width: 15px;
+		height: 22px;
+		background-position: -44px -23px;
+	}
+
+	&.ico-facebook:after {
+		width: 9px;
+		height: 22px;
+		background-position: -100px -23px;
+		left: 18px;
+	}
+	&.ico-twitter:after {
+		width: 23px;
+		height: 22px;
+		background-position: -112px -23px;
+	}
+	&.ico-facebook:before, &.ico-twitter:before {
+		background:red;
+		width: 50px;
+		left: 0;
+		height: 100%;
+		border-top-left-radius: 5px; 
+		border-bottom-left-radius: 5px; 
+	}
+
+	&.ico-facebook:before {
+		background:$blue-fb;
+	}
+	&.ico-twitter:before {
+		background:$blue-tw;
+	}
+
+
+}
+
+	
+
+.btn-play-pause {
+	width: 15px;
+	height: 15px;
+	background: $sprite;
+	opacity: .2;
+
+	&.pause {
+		background-position: -15px 0;
+		opacity: 1;
+	}
+
+}
+.btn-sendMsg {
+	width: 24px;
+	height: 15px;
+	background: $sprite;
+	opacity: .3;
+	background-position: -81px 0;
+}
+
+
+
+
+.no-message {
+	text-align: center;
+	width: 213px;
+	font-size: 29px;
+	margin: 0 auto;
+	margin-top: 20%;
+	display: none;
+
+	&.show {
+		display: block;
+	}
+}
+
+.content-container {
+	padding: 0 10px;
+}
+
+.width-small {
+	width: 70px;
+}
+.width-medium {
+	width: 144px;
+}
+.width-very-small {
+	width: 50px;
+}
+
+.text-small {
+	font-size: 12px;
+	opacity: .4;
+}
+
+ul.list-inline {
+	li {float:left;}
+	&:after {
+		content:"";
+		display: block;
+		clear:both;
+	}
+}
+
+.hide {
+	display: none;
+}
+
+
+.pull-left {
+	float: left;
+}
+
+.pull-right {
+	float:right;
+}
+
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+
+
+
+
+
+
+
+
+.instrument-img {
+	width: 50px;
+	height: 40px;
+	background: url(../img/sprite-instruments.png)no-repeat;
+		
+	background-position: -50px 0;
+
+	&.piano {
+		background-position: 0 0;
+	}
+	&.chord {
+		background-position: -50px 0;
+	}
+	&.saxophone {
+		background-position: -100px 0;
+	}
+	&.song-writer {
+		background-position: -150px 0;
+	}
+	&.voice {
+		background-position: -200px 0;
+	}
+}

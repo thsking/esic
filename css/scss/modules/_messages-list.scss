@@ -1,0 +1,38 @@
+#messages-list {
+
+	.messages-list-message {
+		margin-bottom: 1px;
+		&:after {
+			bottom: 0px;
+		}
+
+		.messages-list-message-container {
+			padding: 5px 10px;
+			&.new {
+				h3 {
+					color: $white-txt;
+				}
+				background:$blue;
+				color: white;
+			}
+		}
+	}
+
+	.messages-list-infos {
+		padding-top: 6px;
+		p.gray-noPadLeft {
+			width: 186px;
+		}
+	}
+
+	.messages-list-time {
+		margin-top: 15px;
+	}
+
+	.messages-list-photo img {
+		width: 56px;
+		height: 56px;
+		border-radius: 56px;
+	}
+
+}

@@ -1,0 +1,29 @@
+<div id="message">
+
+	<div ng-repeat="i in messages track by $index" >
+
+		<div class="message clearfix" ng-class="{'message-send': isTheSame(messages[$index].ID_User_Send, thisUserId)}"><div class="message-container" ng-class="{'pull-right': isTheSame(messages[$index].ID_User_Send, thisUserId)}">
+			
+			<p>{{messages[$index].Message}}</p>
+
+			<p class="message-infos">
+				{{getDate(messages[$index].Date_Creation)}}
+			</p>
+
+		</div></div>
+
+	</div>
+
+
+	<div class="message-answere">
+		<form action="" class="clearfix">
+			
+			<textarea name="message-answere" placeholder="Votre message" class="pull-left" ng-keyup="autoExpand($event)" ng-model="newMessage"></textarea>
+
+			<div class="btn-send pull-right" ng-click="sendMsg()"></div>
+
+		</form>
+	</div>
+
+
+</div>

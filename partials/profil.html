@@ -1,0 +1,141 @@
+<section id="profil">
+	<div class="profil-container">
+		
+
+		<div class="profil-header-container">
+
+			<div class="clearfix">
+			
+				<div class="avatar-container pull-left">
+					
+					<img ng-src="{{profil.Avatar}}" alt="">
+
+				</div>
+
+				<div class="user-infos users-user pull-left">
+
+					<p ng-class="{hide:isTheSame(profil.Instrument_Favorit, '')}"><span class="ico-litle ico-litle-guitare"></span> {{profil.Instrument_Favorit}}</p>
+					<p ng-class="{hide:isTheSame(profil.Style, '')}"><span class="ico-litle ico-litle-wave" ></span> {{profil.Style}}</p>
+					<p ng-class="{hide:isTheSame(profil.Distance, '')}"><span class="ico-litle ico-litle-distance"></span> à {{profil.Distance}} km</p>
+
+				</div>
+
+			</div>
+
+			<div class="profil-social-message clearfix">
+				
+				<div class="profil-social-link pull-left">
+				
+					<ul class="list-inline social-link-list">
+						<li ng-class="{only:isTheSame(profil.Lnik_Facebook, undefined) && isTheSame(profil.Link_Tiwtter, undefined)}"><a href="#"	 class="link-soundcloud">soundcloud</a></li>
+						<li  ng-class="{hide:isTheSame(profil.Lnik_Facebook, undefined)}"><a href="#" class="link-facebook">facebook</a></li>
+						<li ng-class="{hide:isTheSame(profil.Link_Tiwtter, undefined)}"><a href="#" class="link-twitter">twitter</a></li>
+					</ul>
+
+				</div>
+
+				<div class="profil-sendMsg-container pull-right" ng-class="{hide:isTheSame(profil.ID,user.ID)}" ng-click="openMessage(profil.ID)">
+					
+					<div class="btn-sendMsg"></div>
+
+				</div>
+
+				<div class="profil-edit-container pull-right" ng-class="{show:isTheSame(profil.ID,user.ID)}">
+
+					<div class="btn-edit-profil"><a href="#/edit-profil">Editer Profil</a></div>					
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+
+		<div class="profil-description">
+			
+			<h2 class="title">Description</h2>
+
+			<p class="text">{{profil.Description}}</p>
+
+
+		</div>
+
+		<div class="profil-annonces">
+			
+			<h2 class="title">Annonce(s) en cours</h2>
+
+			<div class="annonces-list-annonce users-user" ng-repeat="i in profil.Annonces track by $index"><div class="annonces-list-annonce-container clearfix" ng-click="editAnnonceId(profil.Annonces[$index].ID); goto('annonce')">
+
+				<div class="annonce-instrument width-small pull-left">
+					<img src="./img/annonce-instrument.png" alt="">
+				</div>
+
+				<div class="annonce-infos width-medium pull-left">
+
+					<h3>{{profil.Annonces[$index].Instrument}}</h3>
+		      		<p><span class="ico-litle ico-litle-wave"></span>{{profil.Annonces[$index].Style}}</p>
+
+				</div>
+
+				<div class="annonce-distance width-very-small pull-right">
+
+					<p class="user-distance">{{profil.Distance}} <span class="text-small text-low-opacity">km</span></p>
+
+				</div>
+				
+			</div></div>
+
+
+		</div>
+
+
+		<div class="profil-creation">
+			
+			<h2 class="title">Ses dernières musiques</h2>
+
+			<p class="no-song">{{profil.Name}} n'a encore aucune musique.</p>
+
+			<div class="playsongs" ng-repeat="i in songsToPlay track by $index">
+
+				<div class="playsong-container users-users">
+
+					<div class="playsong-bg">
+						<img ng-src="{{songsToPlay[$index].artwork}}" alt="">
+					</div>
+
+					<div class="playsongs-infos clearfix">
+
+						<div class="pull-left user-distance-play index{{$index}}">
+							
+        					<div class="user-btn-play-container"><div class="btn-play-pause" ng-click="play($index, songsToPlay[$index].id)"></div></div>
+
+						</div>
+
+						<p class="pull-left playsong-name"><span>{{songsToPlay[$index].title}}</span></p>						
+
+					</div>
+
+					<div class="users-user"><div class="user-distance-play index{{$index}}">
+				        <div class="user-play-progress-bar-container">
+
+				          <div class="user-play-progress-bar">
+				            <div class="user-play-progress-bar-cache"></div>
+				            <div class="user-play-progress-bar-played"></div>
+				          </div>
+
+				        </div>
+				    </div></div>
+
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+	</div>
+</section>
