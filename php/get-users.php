@@ -2,6 +2,8 @@
 
 	require_once("sql-connect.php");
 	require_once('functions.php');
+	require_once("encoding.php");
+	use \ForceUTF8\Encoding;
 
 
 	if(@$_GET['to']=='only' && @$_GET['userId']!='' && @$_GET['pos'] != ''){
@@ -47,8 +49,8 @@
 		for($i=0;$i<count($annonces);$i++){
 			$annonces[$i] = [
 				'ID' => $annonces[$i]['ID'],
-				'Instrument' => $annonces[$i]['Instrument'],
-				'Style' => $annonces[$i]['Style']
+				'Instrument' => Encoding::toUTF8($annonces[$i]['Instrument']),
+				'Style' => Encoding::toUTF8($annonces[$i]['Style'])
 			];
 		}
 
@@ -56,21 +58,21 @@
 
 		// MAKE ARRAY OUT 
 		$userOut = [
-			'ID' => html_entity_decode($user[0]['ID']),
-			'ID_Soundcloud' => html_entity_decode($user[0]['ID_Soundcloud']),
+			'ID' => $user[0]['ID'],
+			'ID_Soundcloud' => $user[0]['ID_Soundcloud'],
 			'Name' => html_entity_decode($user[0]['Name']),
 			'Instrument_Favorit' => html_entity_decode($user[0]['Instrument_Favorit']),
 			'Instrument_Other' => html_entity_decode($user[0]['Instrument_Other']),
 			'Style' => html_entity_decode($user[0]['Style']),
-			'Description' => html_entity_decode($user[0]['Description']),
-			'Last_Position' => html_entity_decode($user[0]['Last_Position']),
-			'First_Connection' => html_entity_decode($user[0]['First_Connection']),
-			'Last_Connection' => html_entity_decode($user[0]['Last_Connection']),
-			'Avatar' => html_entity_decode($user[0]['Avatar']),
-			'Link_Soundcloud' => html_entity_decode($user[0]['Link_Soundcloud']),
-			'Link_Twitter' => html_entity_decode($user[0]['Link_Twitter']),
-			'Link_Facebook' => html_entity_decode($user[0]['Link_Facebook']),
-			'Distance' => html_entity_decode($distance),
+			'Description' => Encoding::toUTF8($user[0]['Description']),
+			'Last_Position' => $user[0]['Last_Position'],
+			'First_Connection' => $user[0]['First_Connection'],
+			'Last_Connection' => $user[0]['Last_Connection'],
+			'Avatar' => $user[0]['Avatar'],
+			'Link_Soundcloud' => $user[0]['Link_Soundcloud'],
+			'Link_Twitter' => $user[0]['Link_Twitter'],
+			'Link_Facebook' => $user[0]['Link_Facebook'],
+			'Distance' => $distance,
 			'Annonces' => $annonces
 		];
 
@@ -138,8 +140,9 @@
 
 		usort($usersOut, 'sortByDistance');
 		
+		print_r($usersOut);
 
-		echo json_encode($usersOut);
+		// echo json_encode($usersOut);
 
 	}
 

@@ -2,6 +2,9 @@
 
 	require_once("sql-connect.php");
 	require_once("functions.php");
+	require_once("encoding.php");
+	use \ForceUTF8\Encoding;
+
 
 
 	if(@$_GET['to']=='list' && @$_GET['pos'] != ''){
@@ -26,7 +29,6 @@
 		$stmt->execute();
 
 		$annonces = $stmt->fetchAll();
-
 
 
 
@@ -103,14 +105,13 @@
 
 			$distance = distance($pos['lat'], $pos['lon'], $userAnnoncePos['lat'], $userAnnoncePos['lon']);
 
-
 			// Create the array to send
 			$annoncesOut[$i] = [
 				'ID' => $annonces[$i]['ID'],
 				'ID_User' => $annonces[$i]['ID_User'],
-				'Instrument' => $annonces[$i]['Instrument'],
-				'Style' => $annonces[$i]['Style'],
-				'Description' => $annonces[$i]['Description'],
+				'Instrument' => Encoding::toUTF8($annonces[$i]['Instrument']),
+				'Style' => Encoding::toUTF8($annonces[$i]['Style']),
+				'Description' => Encoding::toUTF8($annonces[$i]['Description']),
 				'Last_Position' => $users[$userAnnonceIndex]['Last_Position'],
 				'Distance' => $distance
 			];
@@ -118,12 +119,9 @@
 		}
 
 
-		
+
 		usort($annoncesOut, 'sortByDistance');
-
-
-		print_r(json_encode($annoncesOut));
-
+		echo json_encode($annoncesOut);
 
 	}
 
@@ -208,8 +206,8 @@
 			'ID' => $annonce[0]['ID'],
 			'ID_User' => $annonce[0]['ID_User'],
 			'Instrument' => $annonce[0]['Instrument'],
-			'Style' => $annonce[0]['Style'],
-			'Description' => $annonce[0]['Description'],
+			'Style' => Encoding::toUTF8($annonce[0]['Style']),
+			'Description' => Encoding::toUTF8($annonce[0]['Description']),
 			'Last_Position' => $user[0]['Last_Position'],
 			'Distance' => $distance
 		];

@@ -832,12 +832,16 @@ myApp.controller('usersListCtrl', ['$scope','$http', function($scope,$http){
 
 myApp.controller('annoncesListCtrl', ['$scope','$http', function($scope,$http){
 	
-    var mainData;   
-    $http.get('php/get-annonces.php?to=list&pos=[50.461977499999996,4.8571596]').success(function(data){
+    var mainData;  
+
+    $http.get('php/get-annonces.php?to=list&pos=[50.461977499999996,4.8571596]')
+
+        .success(function(data){
         
-        $scope.annonces = data;
-        mainData = data;
-    });
+            $scope.annonces = data;
+            mainData = data;
+
+        });
 
 
 
