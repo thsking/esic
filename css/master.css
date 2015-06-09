@@ -1612,13 +1612,13 @@ header nav.dev li:last-child a {
 
 /* line 1, scss/modules/_jury-connect.scss */
 #jury-connect {
-  width: 50px;
-  height: 50px;
-  background: #f8630e;
+  width: 35px;
+  height: 31px;
+  /*background: $orange-soundcloud;*/
   display: block;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
 }
 
 /* line 21, scss/master.scss */
