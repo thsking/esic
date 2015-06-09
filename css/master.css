@@ -1610,7 +1610,18 @@ header nav.dev li:last-child a {
   transform: rotate(-45deg) translate(0.5px, -0.5px);
 }
 
-/* line 20, scss/master.scss */
+/* line 1, scss/modules/_jury-connect.scss */
+#jury-connect {
+  width: 50px;
+  height: 50px;
+  background: #f8630e;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* line 21, scss/master.scss */
 body {
   background: #1c1d1e;
   color: #d4d9de;
@@ -1623,14 +1634,14 @@ body {
   left: 0;
   right: 0;
 }
-/* line 30, scss/master.scss */
+/* line 31, scss/master.scss */
 body .app-container {
   overflow-x: hidden;
   position: relative;
   height: 100%;
 }
 
-/* line 38, scss/master.scss */
+/* line 39, scss/master.scss */
 main {
   overflow: hidden;
   overflow-y: scroll;
@@ -1645,7 +1656,7 @@ main {
   -ms-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
-/* line 49, scss/master.scss */
+/* line 50, scss/master.scss */
 main.full-screen {
   top: 0;
   left: 0;
@@ -1653,21 +1664,21 @@ main.full-screen {
   bottom: 0;
   padding-top: 63px;
 }
-/* line 60, scss/master.scss */
+/* line 61, scss/master.scss */
 main.scrollBlock {
   overflow: hidden;
 }
-/* line 64, scss/master.scss */
+/* line 65, scss/master.scss */
 main.scrollBlock.menuOpen {
   opacity: 0.2;
 }
 
-/* line 72, scss/master.scss */
+/* line 73, scss/master.scss */
 *:focus {
   outline: none;
 }
 
-/* line 77, scss/master.scss */
+/* line 78, scss/master.scss */
 .page {
   position: absolute;
   top: 10px;
@@ -1677,16 +1688,16 @@ main.scrollBlock.menuOpen {
   width: 100%;
   background: #1c1d1e;
 }
-/* line 86, scss/master.scss */
+/* line 87, scss/master.scss */
 .page.Connect {
   top: 0;
 }
-/* line 89, scss/master.scss */
+/* line 90, scss/master.scss */
 .page.Messages {
   top: 50px;
 }
 
-/* line 94, scss/master.scss */
+/* line 95, scss/master.scss */
 .relative {
   position: relative;
   left: auto;
@@ -1695,7 +1706,7 @@ main.scrollBlock.menuOpen {
   bottom: auto;
 }
 
-/* line 102, scss/master.scss */
+/* line 103, scss/master.scss */
 .alert {
   position: absolute;
   top: 0;
@@ -1706,24 +1717,24 @@ main.scrollBlock.menuOpen {
   z-index: 50;
   display: none;
 }
-/* line 116, scss/master.scss */
+/* line 117, scss/master.scss */
 .alert.show {
   display: block;
 }
-/* line 120, scss/master.scss */
+/* line 121, scss/master.scss */
 .alert .content {
   margin-top: 150px;
   position: relative;
 }
-/* line 125, scss/master.scss */
+/* line 126, scss/master.scss */
 .alert h3 {
   margin-top: 15px;
 }
-/* line 129, scss/master.scss */
+/* line 130, scss/master.scss */
 .alert .actions-container {
   margin-top: 10px;
 }
-/* line 131, scss/master.scss */
+/* line 132, scss/master.scss */
 .alert .actions-container button {
   border: 1px solid white;
   padding: 7px 10px;
@@ -1732,14 +1743,14 @@ main.scrollBlock.menuOpen {
   border-radius: 5px;
   margin-right: 5px;
 }
-/* line 139, scss/master.scss */
+/* line 140, scss/master.scss */
 .alert .actions-container button.btn-delete {
   background: #4c90c1;
   color: #4c90c1;
   border-color: #4c90c1;
   color: white;
 }
-/* line 148, scss/master.scss */
+/* line 149, scss/master.scss */
 .alert:before {
   content: "";
   position: absolute;
@@ -1751,20 +1762,20 @@ main.scrollBlock.menuOpen {
   background: #1c1d1e;
 }
 
-/* line 163, scss/master.scss */
+/* line 164, scss/master.scss */
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 165, scss/master.scss */
+/* line 166, scss/master.scss */
 h1, h2, h3, h4, h5, p {
   font-weight: normal;
   margin: 0;
 }
 
-/* line 170, scss/master.scss */
+/* line 171, scss/master.scss */
 h2.title {
   font-size: 14px;
   opacity: .4;
@@ -1772,7 +1783,7 @@ h2.title {
   margin-bottom: 21px;
   padding: 0 10px;
 }
-/* line 178, scss/master.scss */
+/* line 179, scss/master.scss */
 h2.title:after {
   content: "";
   display: block;
@@ -1784,7 +1795,7 @@ h2.title:after {
   bottom: -8px;
 }
 
-/* line 190, scss/master.scss */
+/* line 191, scss/master.scss */
 p.text {
   padding: 0 10px;
   font-size: 16px;
@@ -1792,7 +1803,7 @@ p.text {
   line-height: 1.6;
 }
 
-/* line 199, scss/master.scss */
+/* line 200, scss/master.scss */
 .arrow-left {
   background: url(../img/sprite.png) no-repeat;
   background-position: -142px 0;
@@ -1800,7 +1811,7 @@ p.text {
   height: 13px;
 }
 
-/* line 206, scss/master.scss */
+/* line 207, scss/master.scss */
 .btn-send {
   width: 22px;
   height: 22px;
@@ -1808,11 +1819,11 @@ p.text {
   background-position: -68px -24px;
 }
 
-/* line 212, scss/master.scss */
+/* line 213, scss/master.scss */
 .ico-input {
   position: relative;
 }
-/* line 216, scss/master.scss */
+/* line 217, scss/master.scss */
 .ico-input:after, .ico-input:before {
   content: "";
   display: block;
@@ -1822,42 +1833,42 @@ p.text {
   margin: auto 0;
   background: url(../img/sprite.png) no-repeat;
 }
-/* line 225, scss/master.scss */
+/* line 226, scss/master.scss */
 .ico-input.ico-instrument:before, .ico-input.ico-musicStyle:before, .ico-input.ico-edit:before, .ico-input.ico-facebook:after, .ico-input.ico-twitter:after {
   left: 15px;
 }
-/* line 233, scss/master.scss */
+/* line 234, scss/master.scss */
 .ico-input.ico-instrument:before {
   width: 20px;
   height: 20px;
   background-position: 0 -23px;
 }
-/* line 237, scss/master.scss */
+/* line 238, scss/master.scss */
 .ico-input.ico-musicStyle:before {
   width: 20px;
   height: 15px;
   background-position: -23px -26px;
 }
-/* line 241, scss/master.scss */
+/* line 242, scss/master.scss */
 .ico-input.ico-edit:before {
   width: 15px;
   height: 22px;
   background-position: -44px -23px;
 }
-/* line 247, scss/master.scss */
+/* line 248, scss/master.scss */
 .ico-input.ico-facebook:after {
   width: 9px;
   height: 22px;
   background-position: -100px -23px;
   left: 18px;
 }
-/* line 253, scss/master.scss */
+/* line 254, scss/master.scss */
 .ico-input.ico-twitter:after {
   width: 23px;
   height: 22px;
   background-position: -112px -23px;
 }
-/* line 258, scss/master.scss */
+/* line 259, scss/master.scss */
 .ico-input.ico-facebook:before, .ico-input.ico-twitter:before {
   background: red;
   width: 50px;
@@ -1866,29 +1877,29 @@ p.text {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-/* line 267, scss/master.scss */
+/* line 268, scss/master.scss */
 .ico-input.ico-facebook:before {
   background: #3b5998;
 }
-/* line 270, scss/master.scss */
+/* line 271, scss/master.scss */
 .ico-input.ico-twitter:before {
   background: #55acee;
 }
 
-/* line 279, scss/master.scss */
+/* line 280, scss/master.scss */
 .btn-play-pause {
   width: 15px;
   height: 15px;
   background: url(../img/sprite.png) no-repeat;
   opacity: .2;
 }
-/* line 285, scss/master.scss */
+/* line 286, scss/master.scss */
 .btn-play-pause.pause {
   background-position: -15px 0;
   opacity: 1;
 }
 
-/* line 291, scss/master.scss */
+/* line 292, scss/master.scss */
 .btn-sendMsg {
   width: 24px;
   height: 15px;
@@ -1897,7 +1908,7 @@ p.text {
   background-position: -81px 0;
 }
 
-/* line 302, scss/master.scss */
+/* line 303, scss/master.scss */
 .no-message {
   text-align: center;
   width: 213px;
@@ -1906,94 +1917,94 @@ p.text {
   margin-top: 20%;
   display: none;
 }
-/* line 310, scss/master.scss */
+/* line 311, scss/master.scss */
 .no-message.show {
   display: block;
 }
 
-/* line 315, scss/master.scss */
+/* line 316, scss/master.scss */
 .content-container {
   padding: 0 10px;
 }
 
-/* line 319, scss/master.scss */
+/* line 320, scss/master.scss */
 .width-small {
   width: 70px;
 }
 
-/* line 322, scss/master.scss */
+/* line 323, scss/master.scss */
 .width-medium {
   width: 144px;
 }
 
-/* line 325, scss/master.scss */
+/* line 326, scss/master.scss */
 .width-very-small {
   width: 50px;
 }
 
-/* line 329, scss/master.scss */
+/* line 330, scss/master.scss */
 .text-small {
   font-size: 12px;
   opacity: .4;
 }
 
-/* line 335, scss/master.scss */
+/* line 336, scss/master.scss */
 ul.list-inline li {
   float: left;
 }
-/* line 336, scss/master.scss */
+/* line 337, scss/master.scss */
 ul.list-inline:after {
   content: "";
   display: block;
   clear: both;
 }
 
-/* line 343, scss/master.scss */
+/* line 344, scss/master.scss */
 .hide {
   display: none;
 }
 
-/* line 348, scss/master.scss */
+/* line 349, scss/master.scss */
 .pull-left {
   float: left;
 }
 
-/* line 352, scss/master.scss */
+/* line 353, scss/master.scss */
 .pull-right {
   float: right;
 }
 
-/* line 356, scss/master.scss */
+/* line 357, scss/master.scss */
 .clearfix:after {
   content: "";
   display: block;
   clear: both;
 }
 
-/* line 370, scss/master.scss */
+/* line 371, scss/master.scss */
 .instrument-img {
   width: 50px;
   height: 40px;
   background: url(../img/sprite-instruments.png) no-repeat;
   background-position: -50px 0;
 }
-/* line 377, scss/master.scss */
+/* line 378, scss/master.scss */
 .instrument-img.piano {
   background-position: 0 0;
 }
-/* line 380, scss/master.scss */
+/* line 381, scss/master.scss */
 .instrument-img.chord {
   background-position: -50px 0;
 }
-/* line 383, scss/master.scss */
+/* line 384, scss/master.scss */
 .instrument-img.saxophone {
   background-position: -100px 0;
 }
-/* line 386, scss/master.scss */
+/* line 387, scss/master.scss */
 .instrument-img.song-writer {
   background-position: -150px 0;
 }
-/* line 389, scss/master.scss */
+/* line 390, scss/master.scss */
 .instrument-img.voice {
   background-position: -200px 0;
 }

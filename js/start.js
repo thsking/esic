@@ -1,4 +1,36 @@
 var myApp = angular.module('myApp', []);
+var log = [];
+
+function clog(text){
+
+	/*log[log.length] = text;
+
+	jQuery("#devinfo").empty();
+
+	var devinfo = "";
+
+	for(var i = 0; i<log.length ; i++){
+		devinfo += "<p>"+log[i]+"</p>";
+	}
+
+	jQuery("#devinfo").html(devinfo);*/
+
+}
+
+
+
+function juryConnect(){
+
+	var juryUser = {"ID":"18","ID_Soundcloud":"88322507","Name":"thskingz","Last_Position":"[50.4619776,4.8572163999999995]","Avatar":"https://i1.sndcdn.com/avatars-000082793772-mfvrze-large.jpg"},
+		sc_juryUser_cookie = {"id":88322507,"kind":"user","permalink":"thskingz","username":"thskingz","last_modified":"2015/06/04 15:13:37 +0000","uri":"https://api.soundcloud.com/users/88322507","permalink_url":"http://soundcloud.com/thskingz","avatar_url":"https://i1.sndcdn.com/avatars-000082793772-mfvrze-large.jpg","country":"Belgium","first_name":"","last_name":"","full_name":"","description":null,"city":"","discogs_name":null,"myspace_name":null,"website":null,"website_title":null,"online":false,"track_count":4,"playlist_count":0,"plan":"Free","public_favorites_count":1,"followers_count":2,"followings_count":3,"subscriptions":[],"upload_seconds_left":9884,"quota":{"unlimited_upload_quota":false,"upload_seconds_used":915,"upload_seconds_left":9884},"private_tracks_count":0,"private_playlists_count":0,"primary_email_confirmed":true,"locale":""};
+
+	cookiePut('user', JSON.stringify(juryUser));
+	cookiePut('sc_user_cookie',  JSON.stringify(sc_juryUser_cookie));
+
+
+	window.location.href='esic.html';
+
+}
 
 function logout(){
 	cookieRemove('user');
@@ -17,8 +49,12 @@ myApp.controller("appCtrl", function($scope,$http){
 
 
 
+
+
 	jQuery("#connectWithSoundCloud").click(function(){
 
+
+		clog('connect with soundcloud')
 
 		// show info
 		$actionsContainer.addClass("hide");
@@ -36,7 +72,14 @@ myApp.controller("appCtrl", function($scope,$http){
 
 					tryConnect();
 
+					clog('get user with success');
+
+				}else{
+					clog('error get user');
+					clog(error.message);
 				}
+
+				clog(me.username);
 
 			})
 
@@ -44,28 +87,37 @@ myApp.controller("appCtrl", function($scope,$http){
 
 		var tryConnect = function(){
 
+			clog('try connect');
+
 			$http.get('php/check-users.php').
 				success(function(data){
 
 					if(data){
 
+						clog('check php/user success .. Try connect User PHP')
+
 						$http.get('php/connect.php').
 							success(function(connectData){
+
+								clog('Connect get data success');
+
 								connectUserSoundcloud(connectData);
 							}).
 							error(function(){
+								clog('Error get data Connect user');
 								$infoConnect.text('Une erreur est survenu lors de la connection, réessayez. // 57')
 							})
 
 
 					}else{
+						clog('User isnt register');
 						getUserPosition('soundcloud');
 					}
 
 				}).
 				error(function(){
 					// getUserPosition('soundcloud');
-					console.log('oooo');
+					clog('Error check user php');
 				})
 
 		}
@@ -74,9 +126,8 @@ myApp.controller("appCtrl", function($scope,$http){
 
 
 
-
-
 	jQuery(".connect-hors-ligne-container a").click(function(e){
+
 		
 		// block a event
 		e.preventDefault();
