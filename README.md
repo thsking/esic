@@ -1,4 +1,4 @@
-# esic
+# esic ( 2015 )
 Mobile web app for musician looking for other musician close to them. HTML/CSS - JavaScript (Angular - jQuery ) - PHP/MySQL
 
 
